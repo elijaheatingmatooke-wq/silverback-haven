@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife Experiences | Silverback Haven - Gorilla Trekking Uganda</title>
+    <meta name="description" content="Experience unforgettable wildlife encounters at Silverback Haven. Gorilla trekking, golden monkey tracking, bird watching, and volcano hiking in Uganda.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="gorilla-icon">
+                <svg viewBox="0 0 100 100" width="80" height="80">
+                    <path fill="#c9a962" d="M50,10 C30,10 20,30 20,45 C20,55 25,65 30,70 L30,85 C30,90 35,95 40,95 L45,95 L45,75 L55,75 L55,95 L60,95 C65,95 70,90 70,85 L70,70 C75,65 80,55 80,45 C80,30 70,10 50,10 Z M35,45 C38,45 40,47 40,50 C40,53 38,55 35,55 C32,55 30,53 30,50 C30,47 32,45 35,45 Z M65,45 C68,45 70,47 70,50 C70,53 68,55 65,55 C62,55 60,53 60,50 C60,47 62,45 65,45 Z M50,70 C45,70 42,65 42,60 L58,60 C58,65 55,70 50,70 Z"/>
+                </svg>
+            </div>
+            <div class="loading-text">SILVERBACK HAVEN</div>
+            <div class="loading-bar"><span></span></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <a href="tel:+256700000000" class="top-bar-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+256 700 000 000</span>
+                </a>
+                <a href="mailto:info@silverbackhaven.com" class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@silverbackhaven.com</span>
+                </a>
+            </div>
+            <div class="top-bar-right">
+                <div class="top-bar-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <span class="logo-icon">
+                        <svg viewBox="0 0 50 50" width="40" height="40">
+                            <path fill="#c9a962" d="M25,5 C15,5 10,15 10,22.5 C10,27.5 12.5,32.5 15,35 L15,42.5 C15,45 17.5,47.5 20,47.5 L22.5,47.5 L22.5,37.5 L27.5,37.5 L27.5,47.5 L30,47.5 C32.5,47.5 35,45 35,42.5 L35,35 C37.5,32.5 40,27.5 40,22.5 C40,15 35,5 25,5 Z"/>
+                        </svg>
+                    </span>
+                    <span class="logo-text">Silverback Haven</span>
+                </a>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-quick-links">
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="wildlife.html" class="active">Wildlife</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <a href="tel:+256700000000" class="nav-phone">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="index.html#booking" class="btn btn-book">Book Now</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                    <div class="menu-toggle-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="menu-toggle-text">Menu</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Full Screen Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-header">
+            <div class="menu-overlay-logo">
+                <span class="logo-text">Silverback Haven</span>
+            </div>
+            <button class="menu-close" id="menuClose" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="menu-overlay-content">
+            <div class="menu-main">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link" data-index="I">Home</a>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="rooms.html" class="menu-link" data-index="II">
+                            Rooms
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="rooms.html#forest-view">Forest View Rooms</a></li>
+                            <li><a href="rooms.html#gorilla-suite">Gorilla Suites</a></li>
+                            <li><a href="rooms.html#silverback-villa">Silverback Villas</a></li>
+                            <li><a href="rooms.html#spa">Spa & Wellness</a></li>
+                            <li><a href="packages.html">Packages</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="wildlife.html" class="menu-link" data-index="III">
+                            Wildlife
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="wildlife.html#gorilla-trekking">Gorilla Trekking</a></li>
+                            <li><a href="wildlife.html#golden-monkey">Golden Monkey Tracking</a></li>
+                            <li><a href="wildlife.html#chimpanzee">Chimpanzee Habituation</a></li>
+                            <li><a href="wildlife.html#volcano">Virunga Volcano Hiking</a></li>
+                            <li><a href="wildlife.html#birding">Bird Watching Safari</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="dining.html" class="menu-link" data-index="IV">
+                            Gastronomy
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="dining.html#mist-restaurant">The Mist Restaurant</a></li>
+                            <li><a href="dining.html#canopy-bar">Canopy Bar & Lounge</a></li>
+                            <li><a href="dining.html#bush-dining">Bush Dining Experience</a></li>
+                            <li><a href="dining.html#private-dining">Private Dining</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="destinations.html" class="menu-link" data-index="V">
+                            Destinations
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="destinations.html#bwindi">Bwindi Impenetrable Forest</a></li>
+                            <li><a href="destinations.html#mgahinga">Mgahinga Gorilla Park</a></li>
+                            <li><a href="destinations.html#lake-mutanda">Lake Mutanda</a></li>
+                            <li><a href="destinations.html#virunga">Virunga Mountains</a></li>
+                            <li><a href="destinations.html#bunyonyi">Lake Bunyonyi</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="about.html" class="menu-link" data-index="VI">
+                            About
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="about.html">About Silverback Haven</a></li>
+                            <li><a href="about.html#mission">Our Mission</a></li>
+                            <li><a href="about.html#cultural">Cultural Experiences</a></li>
+                            <li><a href="gallery.html">Photo Gallery</a></li>
+                            <li><a href="#testimonials">Guest Reviews</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="packages.html" class="menu-link" data-index="VII">Packages</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html" class="menu-link" data-index="VIII">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-sidebar">
+                <div class="menu-featured-image">
+                    <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mountain Gorilla">
+                    <div class="menu-featured-overlay">
+                        <span class="menu-featured-tag">Featured</span>
+                        <h3>Gorilla Trekking</h3>
+                        <p>Experience the magic of mountain gorillas in their natural habitat</p>
+                    </div>
+                </div>
+                <div class="menu-contact-info">
+                    <div class="menu-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kisoro, Uganda</span>
+                    </div>
+                    <div class="menu-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+256 700 000 000</span>
+                    </div>
+                    <div class="menu-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@silverbackhaven.com</span>
+                    </div>
+                </div>
+                <div class="menu-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="menu-overlay-footer">
+            <div class="menu-overlay-copyright">
+                © 2024 Silverback Haven. All rights reserved.
+            </div>
+            <div class="menu-overlay-cta">
+                <a href="index.html#booking" class="btn btn-primary">Book Your Stay</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background-image: url('https://images.unsplash.com/photo-1535941339077-2dd1c7963098?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <span class="page-header-tag">Wildlife</span>
+            <h1 class="page-header-title animate-title">Wildlife Experiences</h1>
+            <p class="page-header-subtitle">Encounter the extraordinary creatures of Uganda</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Wildlife</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section wildlife-intro">
+        <div class="container">
+            <div class="intro-content text-center">
+                <span class="section-tag">Unforgettable Encounters</span>
+                <h2 class="section-title animate-title">Journey Into the<br>Heart of the Wild</h2>
+                <p class="intro-text">Uganda is home to half of the world's remaining mountain gorillas and an incredible diversity of wildlife. Our expert guides, many from local communities, will lead you on transformative journeys through ancient forests and volcanic landscapes to encounter some of Earth's most magnificent creatures.</p>
+                <div class="wildlife-stats">
+                    <div class="wildlife-stat">
+                        <span class="stat-number">1,063</span>
+                        <span class="stat-label">Mountain Gorillas</span>
+                    </div>
+                    <div class="wildlife-stat">
+                        <span class="stat-number">350+</span>
+                        <span class="stat-label">Bird Species</span>
+                    </div>
+                    <div class="wildlife-stat">
+                        <span class="stat-number">13</span>
+                        <span class="stat-label">Primate Species</span>
+                    </div>
+                    <div class="wildlife-stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Tracking Success</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gorilla Trekking -->
+    <section id="gorilla-trekking" class="section experience-detail">
+        <div class="container">
+            <div class="experience-detail-grid">
+                <div class="experience-detail-images">
+                    <div class="experience-main-image">
+                        <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Silverback Gorilla Uganda">
+                    </div>
+                    <div class="experience-gallery-small">
+                        <img src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Gorilla Family">
+                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Bwindi Forest">
+                    </div>
+                </div>
+                <div class="experience-detail-content">
+                    <span class="experience-tag featured">Most Popular Experience</span>
+                    <h2>Gorilla Trekking</h2>
+                    <p class="experience-description">Trek through the misty bamboo forests of Bwindi Impenetrable National Park or Mgahinga Gorilla National Park for an intimate encounter with a habituated gorilla family. Spend a magical hour in the presence of these gentle giants, observing their complex social behaviors, playful youngsters, and the awe-inspiring silverback patriarch.</p>
+                    <p class="experience-description">This is a life-changing experience that supports vital conservation efforts and local communities. Uganda is one of only three countries where you can see mountain gorillas in the wild.</p>
+
+                    <div class="experience-specs">
+                        <div class="experience-spec">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Duration</strong>
+                                <span>4-8 hours</span>
+                            </div>
+                        </div>
+                        <div class="experience-spec">
+                            <i class="fas fa-hiking"></i>
+                            <div>
+                                <strong>Difficulty</strong>
+                                <span>Moderate to Challenging</span>
+                            </div>
+                        </div>
+                        <div class="experience-spec">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Group Size</strong>
+                                <span>Max 8 people</span>
+                            </div>
+                        </div>
+                        <div class="experience-spec">
+                            <i class="fas fa-mountain"></i>
+                            <div>
+                                <strong>Altitude</strong>
+                                <span>2,200 - 2,600m</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-includes">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Gorilla trekking permit</li>
+                            <li><i class="fas fa-check"></i> Expert ranger guide</li>
+                            <li><i class="fas fa-check"></i> Park entrance fees</li>
+                            <li><i class="fas fa-check"></i> Packed lunch & water</li>
+                            <li><i class="fas fa-check"></i> Walking stick & porter (optional)</li>
+                            <li><i class="fas fa-check"></i> Certificate of participation</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-price-booking">
+                        <div class="experience-price">
+                            <span class="price-from">From</span>
+                            <span class="price-amount">$800</span>
+                            <span class="price-per">per person (permit included)</span>
+                        </div>
+                        <a href="index.html#booking" class="btn btn-primary">Book Experience</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Golden Monkey -->
+    <section id="golden-monkey" class="section experience-detail alt-bg">
+        <div class="container">
+            <div class="experience-detail-grid reverse">
+                <div class="experience-detail-images">
+                    <div class="experience-main-image">
+                        <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Golden Monkey Uganda">
+                    </div>
+                    <div class="experience-gallery-small">
+                        <img src="https://images.unsplash.com/photo-1544985361-b420d7a77043?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Golden Monkey in Bamboo">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mgahinga Forest">
+                    </div>
+                </div>
+                <div class="experience-detail-content">
+                    <span class="experience-tag">Primate Adventure</span>
+                    <h2>Golden Monkey Tracking</h2>
+                    <p class="experience-description">Discover the playful and endangered golden monkeys in the bamboo zones of Mgahinga Gorilla National Park. These beautiful primates, with their striking golden-orange patches, are found only in the Virunga Mountains. Watch them leap through bamboo forests, play in family groups, and feed on bamboo shoots.</p>
+                    <p class="experience-description">This experience is often combined with gorilla trekking for the ultimate primate safari. It's also an excellent alternative for those seeking a less strenuous trek.</p>
+
+                    <div class="experience-specs">
+                        <div class="experience-spec">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Duration</strong>
+                                <span>2-4 hours</span>
+                            </div>
+                        </div>
+                        <div class="experience-spec">
+                            <i class="fas fa-hiking"></i>
+                            <div>
+                                <strong>Difficulty</strong>
+                                <span>Easy to Moderate</span>
+                            </div>
+                        </div>
+                        <div class="experience-spec">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Group Size</strong>
+                                <span>Max 12 people</span>
+                            </div>
+                        </div>
+                        <div class="experience-spec">
+                            <i class="fas fa-eye"></i>
+                            <div>
+                                <strong>Viewing Time</strong>
+                                <span>1 hour with monkeys</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-includes">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Golden monkey tracking permit</li>
+                            <li><i class="fas fa-check"></i> Expert ranger guide</li>
+                            <li><i class="fas fa-check"></i> Park entrance fees</li>
+                            <li><i class="fas fa-check"></i> Refreshments</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-price-booking">
+                        <div class="experience-price">
+                            <span class="price-from">From</span>
+                            <span class="price-amount">$100</span>
+                            <span class="price-per">per person</span>
+                        </div>
+                        <a href="index.html#booking" class="btn btn-primary">Book Experience</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chimpanzee Habituation -->
+    <section id="chimpanzee" class="section experience-detail">
+        <div class="container">
+            <div class="experience-detail-grid">
+                <div class="experience-detail-images">
+                    <div class="experience-main-image">
+                        <img src="https://images.unsplash.com/photo-1504987835173-66e23eb3f158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Chimpanzee Uganda">
+                    </div>
+                    <div class="experience-gallery-small">
+                        <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Chimp Close-up">
+                        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Kibale Forest">
+                    </div>
+                </div>
+                <div class="experience-detail-content">
+                    <span class="experience-tag">Extended Experience</span>
+                    <h2>Chimpanzee Habituation</h2>
+                    <p class="experience-description">Join researchers in the chimpanzee habituation experience in Kibale Forest, home to over 1,500 chimpanzees - the highest density in Uganda. Unlike regular tracking, habituation allows you to spend up to 4 hours with a chimp community, observing their complex social behaviors, tool use, and hunting strategies.</p>
+                    <p class="experience-description">This is an extraordinary opportunity for wildlife enthusiasts and photographers who want a deeper, more intimate experience with our closest relatives in the animal kingdom.</p>
+
+                    <div class="experience-specs">
+                        <div class="experience-spec">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Duration</strong>
+                                <span>Full day (6-8 hours)</span>
+                            </div>
+                        </div>
+                        <div class="experience-spec">
+                            <i class="fas fa-hiking"></i>
+                            <div>
+                                <strong>Difficulty</strong>
+                                <span>Moderate</span>
+                            </div>
+                        </div>
+                        <div class="experience-spec">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Group Size</strong>
+                                <span>Max 4 people</span>
+                            </div>
+                        </div>
+                        <div class="experience-spec">
+                            <i class="fas fa-eye"></i>
+                            <div>
+                                <strong>Viewing Time</strong>
+                                <span>Up to 4 hours</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-includes">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Habituation experience permit</li>
+                            <li><i class="fas fa-check"></i> Expert researcher guide</li>
+                            <li><i class="fas fa-check"></i> Forest lunch</li>
+                            <li><i class="fas fa-check"></i> Transportation from lodge</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-price-booking">
+                        <div class="experience-price">
+                            <span class="price-from">From</span>
+                            <span class="price-amount">$250</span>
+                            <span class="price-per">per person</span>
+                        </div>
+                        <a href="index.html#booking" class="btn btn-primary">Book Experience</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volcano Hiking -->
+    <section id="volcano" class="section experience-detail alt-bg">
+        <div class="container">
+            <div class="experience-detail-grid reverse">
+                <div class="experience-detail-images">
+                    <div class="experience-main-image">
+                        <img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Virunga Volcano Uganda">
+                    </div>
+                    <div class="experience-gallery-small">
+                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Volcanic Landscape">
+                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mountain View">
+                    </div>
+                </div>
+                <div class="experience-detail-content">
+                    <span class="experience-tag">Adventure Trek</span>
+                    <h2>Virunga Volcano Hiking</h2>
+                    <p class="experience-description">Climb the majestic volcanoes of the Virunga range - a chain of eight volcanic mountains stretching across Uganda, Rwanda, and DR Congo. Choose from Mount Muhabura (4,127m), Mount Gahinga (3,474m), or Mount Sabyinyo (3,669m) for breathtaking views across three countries.</p>
+                    <p class="experience-description">These hikes traverse diverse ecosystems from bamboo forests to alpine meadows, with opportunities to spot buffalo, forest elephants, and various primate species along the way.</p>
+
+                    <div class="experience-specs">
+                        <div class="experience-spec">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Duration</strong>
+                                <span>6-10 hours</span>
+                            </div>
+                        </div>
+                        <div class="experience-spec">
+                            <i class="fas fa-hiking"></i>
+                            <div>
+                                <strong>Difficulty</strong>
+                                <span>Challenging</span>
+                            </div>
+                        </div>
+                        <div class="experience-spec">
+                            <i class="fas fa-mountain"></i>
+                            <div>
+                                <strong>Elevation</strong>
+                                <span>3,474m - 4,127m</span>
+                            </div>
+                        </div>
+                        <div class="experience-spec">
+                            <i class="fas fa-flag"></i>
+                            <div>
+                                <strong>Summit Options</strong>
+                                <span>3 Peaks Available</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-includes">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Hiking permit</li>
+                            <li><i class="fas fa-check"></i> Armed ranger guide</li>
+                            <li><i class="fas fa-check"></i> Packed lunch & water</li>
+                            <li><i class="fas fa-check"></i> Porter service available</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-price-booking">
+                        <div class="experience-price">
+                            <span class="price-from">From</span>
+                            <span class="price-amount">$100</span>
+                            <span class="price-per">per person</span>
+                        </div>
+                        <a href="index.html#booking" class="btn btn-primary">Book Experience</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bird Watching -->
+    <section id="birding" class="section experience-detail">
+        <div class="container">
+            <div class="experience-detail-grid">
+                <div class="experience-detail-images">
+                    <div class="experience-main-image">
+                        <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Bird Watching Uganda">
+                    </div>
+                    <div class="experience-gallery-small">
+                        <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Colorful Bird">
+                        <img src="https://images.unsplash.com/photo-1480044965905-02098d419e96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Bird in Flight">
+                    </div>
+                </div>
+                <div class="experience-detail-content">
+                    <span class="experience-tag">Birder's Paradise</span>
+                    <h2>Bird Watching Safari</h2>
+                    <p class="experience-description">With over 350 bird species, including 23 Albertine Rift endemics, Kisoro and the surrounding areas are a birder's paradise. Spot the stunning Rwenzori Turaco, Handsome Francolin, African Green Broadbill, Shelley's Crimsonwing, and many more rare species found nowhere else on Earth.</p>
+                    <p class="experience-description">Our expert birding guides know exactly where to find the most elusive species. Whether you're a serious twitcher or a casual nature lover, our birding safaris cater to all levels of interest.</p>
+
+                    <div class="experience-specs">
+                        <div class="experience-spec">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Duration</strong>
+                                <span>Half or Full Day</span>
+                            </div>
+                        </div>
+                        <div class="experience-spec">
+                            <i class="fas fa-hiking"></i>
+                            <div>
+                                <strong>Difficulty</strong>
+                                <span>Easy</span>
+                            </div>
+                        </div>
+                        <div class="experience-spec">
+                            <i class="fas fa-binoculars"></i>
+                            <div>
+                                <strong>Equipment</strong>
+                                <span>Provided</span>
+                            </div>
+                        </div>
+                        <div class="experience-spec">
+                            <i class="fas fa-dove"></i>
+                            <div>
+                                <strong>Species</strong>
+                                <span>350+ Possible</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-includes">
+                        <h4>What's Included</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Expert birding guide</li>
+                            <li><i class="fas fa-check"></i> Quality binoculars</li>
+                            <li><i class="fas fa-check"></i> Bird checklist & guide book</li>
+                            <li><i class="fas fa-check"></i> Refreshments</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-price-booking">
+                        <div class="experience-price">
+                            <span class="price-from">From</span>
+                            <span class="price-amount">$50</span>
+                            <span class="price-per">per person</span>
+                        </div>
+                        <a href="index.html#booking" class="btn btn-primary">Book Experience</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conservation Section -->
+    <section class="section conservation">
+        <div class="conservation-bg" style="background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="conservation-overlay"></div>
+        <div class="container">
+            <div class="conservation-content text-center">
+                <span class="section-tag light">Conservation</span>
+                <h2 class="section-title animate-title light">Protecting Uganda's<br>Natural Heritage</h2>
+                <p>Every wildlife experience at Silverback Haven directly contributes to conservation efforts. A portion of all permit fees goes to protecting gorilla habitats, anti-poaching patrols, and supporting local communities who live alongside these magnificent animals.</p>
+                <div class="conservation-stats">
+                    <div class="conservation-stat">
+                        <span class="stat-icon"><i class="fas fa-shield-alt"></i></span>
+                        <span class="stat-number">$20M+</span>
+                        <span class="stat-label">Annual Conservation Funding</span>
+                    </div>
+                    <div class="conservation-stat">
+                        <span class="stat-icon"><i class="fas fa-users"></i></span>
+                        <span class="stat-number">40,000+</span>
+                        <span class="stat-label">Community Members Supported</span>
+                    </div>
+                    <div class="conservation-stat">
+                        <span class="stat-icon"><i class="fas fa-chart-line"></i></span>
+                        <span class="stat-number">3%</span>
+                        <span class="stat-label">Annual Gorilla Population Growth</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="cta-bg" style="background-image: url('https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Ready for Your Wildlife Adventure?</h2>
+                <p>Book your wildlife experience today and create memories that will last a lifetime.</p>
+                <div class="cta-buttons">
+                    <a href="index.html#booking" class="btn btn-primary">Book Now</a>
+                    <a href="packages.html" class="btn btn-outline-light">View Packages</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
+                <path fill="#0a0a0a" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg viewBox="0 0 50 50" width="50" height="50">
+                            <path fill="#c9a962" d="M25,5 C15,5 10,15 10,22.5 C10,27.5 12.5,32.5 15,35 L15,42.5 C15,45 17.5,47.5 20,47.5 L22.5,47.5 L22.5,37.5 L27.5,37.5 L27.5,47.5 L30,47.5 C32.5,47.5 35,45 35,42.5 L35,35 C37.5,32.5 40,27.5 40,22.5 C40,15 35,5 25,5 Z"/>
+                        </svg>
+                        <span>Silverback Haven</span>
+                    </div>
+                    <p>Your gateway to the extraordinary world of mountain gorillas. Luxury lodge in Kisoro, Uganda - at the heart of the Virunga Mountains.</p>
+                    <div class="footer-newsletter">
+                        <h4>Subscribe to Our Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Accommodation</a></li>
+                        <li><a href="wildlife.html">Wildlife Experiences</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Safari Packages</a></li>
+                        <li><a href="index.html#booking">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Experiences</h4>
+                    <ul>
+                        <li><a href="wildlife.html#gorilla-trekking">Gorilla Trekking</a></li>
+                        <li><a href="wildlife.html#golden-monkey">Golden Monkey Tracking</a></li>
+                        <li><a href="destinations.html#virunga">Virunga Volcano Hiking</a></li>
+                        <li><a href="destinations.html#lake-mutanda">Lake Mutanda Tours</a></li>
+                        <li><a href="wildlife.html#birding">Bird Watching</a></li>
+                        <li><a href="about.html#cultural">Batwa Cultural Trail</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kisoro, South Western Uganda</li>
+                        <li><i class="fas fa-phone"></i> +256 700 123 456</li>
+                        <li><i class="fas fa-envelope"></i> info@silverbackhaven.com</li>
+                    </ul>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Silverback Haven. All rights reserved.</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

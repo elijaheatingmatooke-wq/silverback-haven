@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations | Silverback Haven - Explore Uganda</title>
+    <meta name="description" content="Discover Uganda's most stunning destinations. From Bwindi Impenetrable Forest to Lake Mutanda and the Virunga Mountains. Plan your adventure with Silverback Haven.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="gorilla-icon">
+                <svg viewBox="0 0 100 100" width="80" height="80">
+                    <path fill="#c9a962" d="M50,10 C30,10 20,30 20,45 C20,55 25,65 30,70 L30,85 C30,90 35,95 40,95 L45,95 L45,75 L55,75 L55,95 L60,95 C65,95 70,90 70,85 L70,70 C75,65 80,55 80,45 C80,30 70,10 50,10 Z M35,45 C38,45 40,47 40,50 C40,53 38,55 35,55 C32,55 30,53 30,50 C30,47 32,45 35,45 Z M65,45 C68,45 70,47 70,50 C70,53 68,55 65,55 C62,55 60,53 60,50 C60,47 62,45 65,45 Z M50,70 C45,70 42,65 42,60 L58,60 C58,65 55,70 50,70 Z"/>
+                </svg>
+            </div>
+            <div class="loading-text">SILVERBACK HAVEN</div>
+            <div class="loading-bar"><span></span></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <a href="tel:+256700000000" class="top-bar-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+256 700 000 000</span>
+                </a>
+                <a href="mailto:info@silverbackhaven.com" class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@silverbackhaven.com</span>
+                </a>
+            </div>
+            <div class="top-bar-right">
+                <div class="top-bar-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <span class="logo-icon">
+                        <svg viewBox="0 0 50 50" width="40" height="40">
+                            <path fill="#c9a962" d="M25,5 C15,5 10,15 10,22.5 C10,27.5 12.5,32.5 15,35 L15,42.5 C15,45 17.5,47.5 20,47.5 L22.5,47.5 L22.5,37.5 L27.5,37.5 L27.5,47.5 L30,47.5 C32.5,47.5 35,45 35,42.5 L35,35 C37.5,32.5 40,27.5 40,22.5 C40,15 35,5 25,5 Z"/>
+                        </svg>
+                    </span>
+                    <span class="logo-text">Silverback Haven</span>
+                </a>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-quick-links">
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="destinations.html" class="active">Destinations</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <a href="tel:+256700000000" class="nav-phone">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="index.html#booking" class="btn btn-book">Book Now</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                    <div class="menu-toggle-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="menu-toggle-text">Menu</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Full Screen Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-header">
+            <div class="menu-overlay-logo">
+                <span class="logo-text">Silverback Haven</span>
+            </div>
+            <button class="menu-close" id="menuClose" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="menu-overlay-content">
+            <div class="menu-main">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link" data-index="I">Home</a>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="rooms.html" class="menu-link" data-index="II">
+                            Rooms
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="rooms.html#forest-view">Forest View Rooms</a></li>
+                            <li><a href="rooms.html#gorilla-suite">Gorilla Suites</a></li>
+                            <li><a href="rooms.html#silverback-villa">Silverback Villas</a></li>
+                            <li><a href="rooms.html#spa">Spa & Wellness</a></li>
+                            <li><a href="packages.html">Packages</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="wildlife.html" class="menu-link" data-index="III">
+                            Wildlife
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="wildlife.html#gorilla-trekking">Gorilla Trekking</a></li>
+                            <li><a href="wildlife.html#golden-monkey">Golden Monkey Tracking</a></li>
+                            <li><a href="wildlife.html#chimpanzee">Chimpanzee Habituation</a></li>
+                            <li><a href="wildlife.html#volcano">Virunga Volcano Hiking</a></li>
+                            <li><a href="wildlife.html#birding">Bird Watching Safari</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="dining.html" class="menu-link" data-index="IV">
+                            Gastronomy
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="dining.html#mist-restaurant">The Mist Restaurant</a></li>
+                            <li><a href="dining.html#canopy-bar">Canopy Bar & Lounge</a></li>
+                            <li><a href="dining.html#bush-dining">Bush Dining Experience</a></li>
+                            <li><a href="dining.html#private-dining">Private Dining</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="destinations.html" class="menu-link" data-index="V">
+                            Destinations
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="destinations.html#bwindi">Bwindi Impenetrable Forest</a></li>
+                            <li><a href="destinations.html#mgahinga">Mgahinga Gorilla Park</a></li>
+                            <li><a href="destinations.html#lake-mutanda">Lake Mutanda</a></li>
+                            <li><a href="destinations.html#virunga">Virunga Mountains</a></li>
+                            <li><a href="destinations.html#bunyonyi">Lake Bunyonyi</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="about.html" class="menu-link" data-index="VI">
+                            About
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="about.html">About Silverback Haven</a></li>
+                            <li><a href="about.html#mission">Our Mission</a></li>
+                            <li><a href="about.html#cultural">Cultural Experiences</a></li>
+                            <li><a href="gallery.html">Photo Gallery</a></li>
+                            <li><a href="#testimonials">Guest Reviews</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="packages.html" class="menu-link" data-index="VII">Packages</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html" class="menu-link" data-index="VIII">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-sidebar">
+                <div class="menu-featured-image">
+                    <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lake Mutanda">
+                    <div class="menu-featured-overlay">
+                        <span class="menu-featured-tag">Featured</span>
+                        <h3>Lake Mutanda</h3>
+                        <p>Uganda's most beautiful lake surrounded by volcanic mountains</p>
+                    </div>
+                </div>
+                <div class="menu-contact-info">
+                    <div class="menu-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kisoro, Uganda</span>
+                    </div>
+                    <div class="menu-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+256 700 000 000</span>
+                    </div>
+                    <div class="menu-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@silverbackhaven.com</span>
+                    </div>
+                </div>
+                <div class="menu-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="menu-overlay-footer">
+            <div class="menu-overlay-copyright">
+                © 2024 Silverback Haven. All rights reserved.
+            </div>
+            <div class="menu-overlay-cta">
+                <a href="index.html#booking" class="btn btn-primary">Book Your Stay</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background-image: url('https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <span class="page-header-tag">Explore</span>
+            <h1 class="page-header-title animate-title">Destinations</h1>
+            <p class="page-header-subtitle">Discover Uganda's most breathtaking natural wonders</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Destinations</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section destinations-intro">
+        <div class="container">
+            <div class="intro-content text-center">
+                <span class="section-tag">Explore Uganda</span>
+                <h2 class="section-title animate-title">A Land of<br>Extraordinary Beauty</h2>
+                <p class="intro-text">South-western Uganda is home to some of Africa's most spectacular landscapes. From ancient rainforests that shelter endangered gorillas to serene crater lakes reflecting volcanic peaks, every destination tells a story of nature's magnificence. Let Silverback Haven be your gateway to these extraordinary places.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lake Mutanda -->
+    <section id="lake-mutanda" class="section destination-feature">
+        <div class="destination-feature-bg" style="background-image: url('https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="destination-feature-overlay"></div>
+        <div class="container">
+            <div class="destination-feature-content">
+                <span class="destination-tag featured">Featured Destination</span>
+                <h2 class="destination-title">Lake Mutanda</h2>
+                <p class="destination-lead">Often called "the most beautiful lake in Uganda," Lake Mutanda is a pristine crater lake surrounded by the dramatic peaks of the Virunga volcanoes. Its calm, crystal-clear waters reflect the towering silhouettes of Mount Muhabura, Gahinga, and Sabyinyo.</p>
+
+                <div class="destination-details">
+                    <div class="destination-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>15 km from Kisoro Town</span>
+                    </div>
+                    <div class="destination-info">
+                        <i class="fas fa-clock"></i>
+                        <span>Half-day to Full-day excursions</span>
+                    </div>
+                    <div class="destination-info">
+                        <i class="fas fa-mountain"></i>
+                        <span>1,800m elevation</span>
+                    </div>
+                </div>
+
+                <div class="destination-activities">
+                    <h4>Activities Available</h4>
+                    <div class="activity-grid">
+                        <div class="activity-item">
+                            <i class="fas fa-water"></i>
+                            <span>Kayaking & Canoeing</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-swimmer"></i>
+                            <span>Swimming</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-ship"></i>
+                            <span>Island Boat Tours</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-camera"></i>
+                            <span>Photography</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-fish"></i>
+                            <span>Fishing</span>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-binoculars"></i>
+                            <span>Bird Watching</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="index.html#booking" class="btn btn-primary">Book Lake Mutanda Tour</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bwindi -->
+    <section id="bwindi" class="section destination-detail">
+        <div class="container">
+            <div class="destination-detail-grid">
+                <div class="destination-detail-images">
+                    <div class="destination-main-image">
+                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Bwindi Impenetrable Forest">
+                    </div>
+                    <div class="destination-gallery-small">
+                        <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Gorilla in Bwindi">
+                        <img src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Forest Trail">
+                    </div>
+                </div>
+                <div class="destination-detail-content">
+                    <span class="destination-tag">UNESCO World Heritage Site</span>
+                    <h2>Bwindi Impenetrable Forest</h2>
+                    <p class="destination-description">Bwindi Impenetrable National Park is one of Africa's most ancient "afromontane" rainforests, dating back over 25,000 years. This UNESCO World Heritage Site is home to nearly half of the world's remaining mountain gorillas - approximately 459 individuals in 50 habituated groups.</p>
+                    <p class="destination-description">The "impenetrable" forest earned its name from its dense undergrowth of herbs, vines, and shrubs. Walking through Bwindi is like stepping back in time, with towering trees draped in moss and a rich symphony of bird calls echoing through the mist.</p>
+
+                    <div class="destination-highlights">
+                        <h4>Highlights</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Home to 459 mountain gorillas</li>
+                            <li><a href="wildlife.html#gorilla-trekking"><i class="fas fa-check"></i> 4 gorilla trekking sectors</a></li>
+                            <li><i class="fas fa-check"></i> 350+ bird species</li>
+                            <li><i class="fas fa-check"></i> 10 primate species</li>
+                            <li><i class="fas fa-check"></i> Ancient forest ecosystem</li>
+                            <li><i class="fas fa-check"></i> Batwa cultural experiences</li>
+                        </ul>
+                    </div>
+
+                    <div class="destination-quick-info">
+                        <div class="quick-info-item">
+                            <strong>Distance from Lodge</strong>
+                            <span>45 minutes drive</span>
+                        </div>
+                        <div class="quick-info-item">
+                            <strong>Best Time to Visit</strong>
+                            <span>Jun-Sep, Dec-Feb</span>
+                        </div>
+                    </div>
+
+                    <a href="wildlife.html#gorilla-trekking" class="btn btn-primary">Plan Gorilla Trek</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mgahinga -->
+    <section id="mgahinga" class="section destination-detail alt-bg">
+        <div class="container">
+            <div class="destination-detail-grid reverse">
+                <div class="destination-detail-images">
+                    <div class="destination-main-image">
+                        <img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Mgahinga Gorilla National Park">
+                    </div>
+                    <div class="destination-gallery-small">
+                        <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Golden Monkey">
+                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Volcanic Peak">
+                    </div>
+                </div>
+                <div class="destination-detail-content">
+                    <span class="destination-tag">Volcanic Wonderland</span>
+                    <h2>Mgahinga Gorilla National Park</h2>
+                    <p class="destination-description">Uganda's smallest national park packs an extraordinary punch. Mgahinga Gorilla National Park protects the Ugandan slopes of three dormant volcanoes - Muhabura, Gahinga, and Sabyinyo - that form part of the Virunga Massif.</p>
+                    <p class="destination-description">Beyond gorilla trekking, Mgahinga is the best place in Uganda to track the endangered golden monkeys, with their striking golden-orange fur. The park also offers challenging volcano hikes with rewards of panoramic views across three countries.</p>
+
+                    <div class="destination-highlights">
+                        <h4>Highlights</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 1 habituated gorilla group (Nyakagezi)</li>
+                            <li><a href="wildlife.html#golden-monkey"><i class="fas fa-check"></i> Best golden monkey tracking</a></li>
+                            <li><a href="wildlife.html#volcano"><i class="fas fa-check"></i> 3 volcano hiking trails</a></li>
+                            <li><i class="fas fa-check"></i> Garama Cave exploration</li>
+                            <li><i class="fas fa-check"></i> Batwa Trail experience</li>
+                            <li><i class="fas fa-check"></i> Stunning volcanic scenery</li>
+                        </ul>
+                    </div>
+
+                    <div class="destination-quick-info">
+                        <div class="quick-info-item">
+                            <strong>Distance from Lodge</strong>
+                            <span>30 minutes drive</span>
+                        </div>
+                        <div class="quick-info-item">
+                            <strong>Best Time to Visit</strong>
+                            <span>Year-round</span>
+                        </div>
+                    </div>
+
+                    <a href="wildlife.html#golden-monkey" class="btn btn-primary">Plan Golden Monkey Trek</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virunga Mountains -->
+    <section id="virunga" class="section destination-detail">
+        <div class="container">
+            <div class="destination-detail-grid">
+                <div class="destination-detail-images">
+                    <div class="destination-main-image">
+                        <img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Virunga Mountains">
+                    </div>
+                    <div class="destination-gallery-small">
+                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mountain Trail">
+                        <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="View from Peak">
+                    </div>
+                </div>
+                <div class="destination-detail-content">
+                    <span class="destination-tag">Mountain Adventure</span>
+                    <h2>Virunga Mountains</h2>
+                    <p class="destination-description">The Virunga Mountains are a chain of eight volcanic peaks stretching along the border of Uganda, Rwanda, and DR Congo. These dramatic peaks, ranging from 3,474m to 4,507m, are the stuff of legend - formed by volcanic activity and now cloaked in lush montane forest.</p>
+                    <p class="destination-description">Climbing these volcanoes offers some of East Africa's most rewarding hiking experiences, with diverse ecosystems from bamboo forests to alpine meadows, and summit views that span three countries.</p>
+
+                    <div class="destination-highlights">
+                        <h4>Hikeable Peaks</h4>
+                        <ul>
+                            <li><i class="fas fa-mountain"></i> <strong>Mount Muhabura</strong> - 4,127m (most challenging)</li>
+                            <li><i class="fas fa-mountain"></i> <strong>Mount Sabyinyo</strong> - 3,669m (three countries summit)</li>
+                            <li><i class="fas fa-mountain"></i> <strong>Mount Gahinga</strong> - 3,474m (crater swamp)</li>
+                        </ul>
+                    </div>
+
+                    <div class="destination-quick-info">
+                        <div class="quick-info-item">
+                            <strong>Trek Duration</strong>
+                            <span>6-10 hours round trip</span>
+                        </div>
+                        <div class="quick-info-item">
+                            <strong>Fitness Level</strong>
+                            <span>Challenging</span>
+                        </div>
+                    </div>
+
+                    <a href="wildlife.html#volcano" class="btn btn-primary">Book Volcano Hike</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lake Bunyonyi -->
+    <section id="bunyonyi" class="section destination-detail alt-bg">
+        <div class="container">
+            <div class="destination-detail-grid reverse">
+                <div class="destination-detail-images">
+                    <div class="destination-main-image">
+                        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Lake Bunyonyi">
+                    </div>
+                    <div class="destination-gallery-small">
+                        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Island on Lake">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Terraced Hills">
+                    </div>
+                </div>
+                <div class="destination-detail-content">
+                    <span class="destination-tag">Africa's Second Deepest Lake</span>
+                    <h2>Lake Bunyonyi</h2>
+                    <p class="destination-description">Lake Bunyonyi, meaning "place of many little birds," lives up to its name with over 200 bird species recorded. This stunning lake, at 1,962m elevation, is dotted with 29 islands, each with its own history and character.</p>
+                    <p class="destination-description">The lake's terraced hillsides, carved by the Bakiga people over generations, create one of Uganda's most photographed landscapes. At up to 900m deep in places, it's Africa's second deepest lake and one of the few in Uganda that's bilharzia-free.</p>
+
+                    <div class="destination-highlights">
+                        <h4>Highlights</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 29 islands to explore</li>
+                            <li><i class="fas fa-check"></i> 200+ bird species</li>
+                            <li><i class="fas fa-check"></i> Safe swimming (bilharzia-free)</li>
+                            <li><i class="fas fa-check"></i> Dugout canoe rides</li>
+                            <li><i class="fas fa-check"></i> Community village visits</li>
+                            <li><i class="fas fa-check"></i> Stunning terraced landscapes</li>
+                        </ul>
+                    </div>
+
+                    <div class="destination-quick-info">
+                        <div class="quick-info-item">
+                            <strong>Distance from Lodge</strong>
+                            <span>2 hours drive</span>
+                        </div>
+                        <div class="quick-info-item">
+                            <strong>Best Combined With</strong>
+                            <span>Gorilla trekking trip</span>
+                        </div>
+                    </div>
+
+                    <a href="index.html#booking" class="btn btn-primary">Book Lake Bunyonyi Trip</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section destinations-map">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Location</span>
+                <h2 class="section-title animate-title">Explore the Region</h2>
+                <p>Silverback Haven is perfectly positioned to explore all of South-western Uganda's highlights</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127672.64874692!2d29.60!3d-1.28!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dc4d5e6b2a6b0f%3A0x7d0c3d5e6b2a6b0f!2sKisoro%2C%20Uganda!5e0!3m2!1sen!2sus!4v1629900000000!5m2!1sen!2sus" width="100%" height="500" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="destinations-distance-grid">
+                <div class="distance-card">
+                    <i class="fas fa-tree"></i>
+                    <h4>Bwindi Forest</h4>
+                    <span>45 min drive</span>
+                </div>
+                <div class="distance-card">
+                    <i class="fas fa-mountain"></i>
+                    <h4>Mgahinga Park</h4>
+                    <span>30 min drive</span>
+                </div>
+                <div class="distance-card">
+                    <i class="fas fa-water"></i>
+                    <h4>Lake Mutanda</h4>
+                    <span>15 min drive</span>
+                </div>
+                <div class="distance-card">
+                    <i class="fas fa-water"></i>
+                    <h4>Lake Bunyonyi</h4>
+                    <span>2 hr drive</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="cta-bg" style="background-image: url('https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Ready to Explore Uganda?</h2>
+                <p>Let us help you plan the perfect itinerary to discover these incredible destinations.</p>
+                <div class="cta-buttons">
+                    <a href="index.html#booking" class="btn btn-primary">Start Planning</a>
+                    <a href="packages.html" class="btn btn-outline-light">View Packages</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
+                <path fill="#0a0a0a" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg viewBox="0 0 50 50" width="50" height="50">
+                            <path fill="#c9a962" d="M25,5 C15,5 10,15 10,22.5 C10,27.5 12.5,32.5 15,35 L15,42.5 C15,45 17.5,47.5 20,47.5 L22.5,47.5 L22.5,37.5 L27.5,37.5 L27.5,47.5 L30,47.5 C32.5,47.5 35,45 35,42.5 L35,35 C37.5,32.5 40,27.5 40,22.5 C40,15 35,5 25,5 Z"/>
+                        </svg>
+                        <span>Silverback Haven</span>
+                    </div>
+                    <p>Your gateway to the extraordinary world of mountain gorillas. Luxury lodge in Kisoro, Uganda - at the heart of the Virunga Mountains.</p>
+                    <div class="footer-newsletter">
+                        <h4>Subscribe to Our Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Accommodation</a></li>
+                        <li><a href="wildlife.html">Wildlife Experiences</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Safari Packages</a></li>
+                        <li><a href="index.html#booking">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Experiences</h4>
+                    <ul>
+                        <li><a href="wildlife.html#gorilla-trekking">Gorilla Trekking</a></li>
+                        <li><a href="wildlife.html#golden-monkey">Golden Monkey Tracking</a></li>
+                        <li><a href="destinations.html#virunga">Virunga Volcano Hiking</a></li>
+                        <li><a href="destinations.html#lake-mutanda">Lake Mutanda Tours</a></li>
+                        <li><a href="wildlife.html#birding">Bird Watching</a></li>
+                        <li><a href="about.html#cultural">Batwa Cultural Trail</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kisoro, South Western Uganda</li>
+                        <li><i class="fas fa-phone"></i> +256 700 123 456</li>
+                        <li><i class="fas fa-envelope"></i> info@silverbackhaven.com</li>
+                    </ul>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Silverback Haven. All rights reserved.</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

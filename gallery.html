@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Silverback Haven - Uganda Wildlife Photography</title>
+    <meta name="description" content="Explore stunning photography from Silverback Haven. Mountain gorillas, golden monkeys, Lake Mutanda, Virunga Mountains, and luxury lodge imagery.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="gorilla-icon">
+                <svg viewBox="0 0 100 100" width="80" height="80">
+                    <path fill="#c9a962" d="M50,10 C30,10 20,30 20,45 C20,55 25,65 30,70 L30,85 C30,90 35,95 40,95 L45,95 L45,75 L55,75 L55,95 L60,95 C65,95 70,90 70,85 L70,70 C75,65 80,55 80,45 C80,30 70,10 50,10 Z M35,45 C38,45 40,47 40,50 C40,53 38,55 35,55 C32,55 30,53 30,50 C30,47 32,45 35,45 Z M65,45 C68,45 70,47 70,50 C70,53 68,55 65,55 C62,55 60,53 60,50 C60,47 62,45 65,45 Z M50,70 C45,70 42,65 42,60 L58,60 C58,65 55,70 50,70 Z"/>
+                </svg>
+            </div>
+            <div class="loading-text">SILVERBACK HAVEN</div>
+            <div class="loading-bar"><span></span></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <a href="tel:+256700000000" class="top-bar-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+256 700 000 000</span>
+                </a>
+                <a href="mailto:info@silverbackhaven.com" class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@silverbackhaven.com</span>
+                </a>
+            </div>
+            <div class="top-bar-right">
+                <div class="top-bar-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <span class="logo-icon">
+                        <svg viewBox="0 0 50 50" width="40" height="40">
+                            <path fill="#c9a962" d="M25,5 C15,5 10,15 10,22.5 C10,27.5 12.5,32.5 15,35 L15,42.5 C15,45 17.5,47.5 20,47.5 L22.5,47.5 L22.5,37.5 L27.5,37.5 L27.5,47.5 L30,47.5 C32.5,47.5 35,45 35,42.5 L35,35 C37.5,32.5 40,27.5 40,22.5 C40,15 35,5 25,5 Z"/>
+                        </svg>
+                    </span>
+                    <span class="logo-text">Silverback Haven</span>
+                </a>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-quick-links">
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <a href="tel:+256700000000" class="nav-phone">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="index.html#booking" class="btn btn-book">Book Now</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                    <div class="menu-toggle-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="menu-toggle-text">Menu</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Full Screen Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-header">
+            <div class="menu-overlay-logo">
+                <span class="logo-text">Silverback Haven</span>
+            </div>
+            <button class="menu-close" id="menuClose" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="menu-overlay-content">
+            <div class="menu-main">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link" data-index="I">Home</a>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="rooms.html" class="menu-link" data-index="II">
+                            Rooms
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="rooms.html#forest-view">Forest View Rooms</a></li>
+                            <li><a href="rooms.html#gorilla-suite">Gorilla Suites</a></li>
+                            <li><a href="rooms.html#silverback-villa">Silverback Villas</a></li>
+                            <li><a href="rooms.html#spa">Spa & Wellness</a></li>
+                            <li><a href="packages.html">Packages</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="wildlife.html" class="menu-link" data-index="III">
+                            Wildlife
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="wildlife.html#gorilla-trekking">Gorilla Trekking</a></li>
+                            <li><a href="wildlife.html#golden-monkey">Golden Monkey Tracking</a></li>
+                            <li><a href="wildlife.html#chimpanzee">Chimpanzee Habituation</a></li>
+                            <li><a href="wildlife.html#volcano">Virunga Volcano Hiking</a></li>
+                            <li><a href="wildlife.html#birding">Bird Watching Safari</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="dining.html" class="menu-link" data-index="IV">
+                            Gastronomy
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="dining.html#mist-restaurant">The Mist Restaurant</a></li>
+                            <li><a href="dining.html#canopy-bar">Canopy Bar & Lounge</a></li>
+                            <li><a href="dining.html#bush-dining">Bush Dining Experience</a></li>
+                            <li><a href="dining.html#private-dining">Private Dining</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="destinations.html" class="menu-link" data-index="V">
+                            Destinations
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="destinations.html#bwindi">Bwindi Impenetrable Forest</a></li>
+                            <li><a href="destinations.html#mgahinga">Mgahinga Gorilla Park</a></li>
+                            <li><a href="destinations.html#lake-mutanda">Lake Mutanda</a></li>
+                            <li><a href="destinations.html#virunga">Virunga Mountains</a></li>
+                            <li><a href="destinations.html#bunyonyi">Lake Bunyonyi</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="about.html" class="menu-link" data-index="VI">
+                            About
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="about.html">About Silverback Haven</a></li>
+                            <li><a href="about.html#mission">Our Mission</a></li>
+                            <li><a href="about.html#cultural">Cultural Experiences</a></li>
+                            <li><a href="gallery.html">Photo Gallery</a></li>
+                            <li><a href="#testimonials">Guest Reviews</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="packages.html" class="menu-link" data-index="VII">Packages</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html" class="menu-link" data-index="VIII">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-sidebar">
+                <div class="menu-featured-image">
+                    <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mountain Gorilla">
+                    <div class="menu-featured-overlay">
+                        <span class="menu-featured-tag">Featured</span>
+                        <h3>Gorilla Trekking</h3>
+                        <p>Experience the magic of mountain gorillas in their natural habitat</p>
+                    </div>
+                </div>
+                <div class="menu-contact-info">
+                    <div class="menu-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kisoro, Uganda</span>
+                    </div>
+                    <div class="menu-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+256 700 000 000</span>
+                    </div>
+                    <div class="menu-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@silverbackhaven.com</span>
+                    </div>
+                </div>
+                <div class="menu-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="menu-overlay-footer">
+            <div class="menu-overlay-copyright">
+                © 2024 Silverback Haven. All rights reserved.
+            </div>
+            <div class="menu-overlay-cta">
+                <a href="index.html#booking" class="btn btn-primary">Book Your Stay</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background-image: url('https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <span class="page-header-tag">Explore</span>
+            <h1 class="page-header-title animate-title">Photo Gallery</h1>
+            <p class="page-header-subtitle">Capturing the magic of Uganda's wilderness</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Gallery</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="section gallery-page">
+        <div class="container">
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+                <button class="filter-btn" data-filter="landscape">Landscapes</button>
+                <button class="filter-btn" data-filter="lodge">The Lodge</button>
+                <button class="filter-btn" data-filter="experiences">Experiences</button>
+            </div>
+
+            <!-- Main Gallery Grid -->
+            <div class="gallery-masonry">
+                <!-- Wildlife -->
+                <div class="gallery-item-large" data-category="wildlife">
+                    <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Silverback Gorilla">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Silverback Gorilla</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Bwindi Impenetrable Forest</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-small" data-category="wildlife">
+                    <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Golden Monkey">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Golden Monkey</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Mgahinga National Park</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-small" data-category="landscape">
+                    <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lake Mutanda">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Lake Mutanda</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Kisoro, Uganda</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-small" data-category="wildlife">
+                    <img src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Baby Gorilla">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Baby Gorilla</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Bwindi Forest</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-medium" data-category="landscape">
+                    <img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Virunga Mountains">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Virunga Mountains</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Uganda-Rwanda Border</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-small" data-category="lodge">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gorilla Suite">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Gorilla Suite</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Silverback Haven</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-small" data-category="lodge">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Forest View Room">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Forest View Room</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Silverback Haven</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-large" data-category="landscape">
+                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Bwindi Forest">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Bwindi Impenetrable Forest</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> UNESCO World Heritage Site</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-small" data-category="wildlife">
+                    <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="African Bird">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Rwenzori Turaco</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Bwindi Forest</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-medium" data-category="experiences">
+                    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Batwa Cultural Experience">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Batwa Cultural Trail</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Mgahinga</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-small" data-category="lodge">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="The Mist Restaurant">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">The Mist Restaurant</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Silverback Haven</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-small" data-category="experiences">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Spa Treatment">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Spa & Wellness</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Silverback Haven</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-medium" data-category="wildlife">
+                    <img src="https://images.unsplash.com/photo-1504987835173-66e23eb3f158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Chimpanzee">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Chimpanzee</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Kibale Forest</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-small" data-category="lodge">
+                    <img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Silverback Villa">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Silverback Villa</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Silverback Haven</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-small" data-category="experiences">
+                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kayaking Lake Mutanda">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Kayaking Adventure</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Lake Mutanda</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-large" data-category="wildlife">
+                    <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Gorilla Family">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Gorilla Family</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Bwindi Forest</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-small" data-category="landscape">
+                    <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lake Bunyonyi">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Lake Bunyonyi</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Kabale, Uganda</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item-small" data-category="lodge">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Canopy Bar">
+                    <div class="gallery-item-overlay">
+                        <span class="gallery-item-title">Canopy Bar & Lounge</span>
+                        <span class="gallery-item-location"><i class="fas fa-map-marker-alt"></i> Silverback Haven</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed Section -->
+    <section class="section instagram-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Follow Us</span>
+                <h2 class="section-title animate-title">@SilverbackHaven</h2>
+                <p>Share your moments with us using #SilverbackHaven</p>
+            </div>
+            <div class="instagram-grid">
+                <a href="#" class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="#" class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="#" class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="#" class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="#" class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+                <a href="#" class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1535941339077-2dd1c7963098?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Instagram Post">
+                    <div class="instagram-overlay">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="#" class="btn btn-outline">Follow on Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="cta-bg" style="background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Create Your Own Memories</h2>
+                <p>Book your stay and capture the magic of Uganda's wilderness.</p>
+                <div class="cta-buttons">
+                    <a href="index.html#booking" class="btn btn-primary">Book Now</a>
+                    <a href="wildlife.html" class="btn btn-outline-light">Explore Experiences</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="galleryLightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close"><i class="fas fa-times"></i></button>
+            <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+            <img src="" alt="" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
+                <path fill="#0a0a0a" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg viewBox="0 0 50 50" width="50" height="50">
+                            <path fill="#c9a962" d="M25,5 C15,5 10,15 10,22.5 C10,27.5 12.5,32.5 15,35 L15,42.5 C15,45 17.5,47.5 20,47.5 L22.5,47.5 L22.5,37.5 L27.5,37.5 L27.5,47.5 L30,47.5 C32.5,47.5 35,45 35,42.5 L35,35 C37.5,32.5 40,27.5 40,22.5 C40,15 35,5 25,5 Z"/>
+                        </svg>
+                        <span>Silverback Haven</span>
+                    </div>
+                    <p>Your gateway to the extraordinary world of mountain gorillas. Luxury lodge in Kisoro, Uganda - at the heart of the Virunga Mountains.</p>
+                    <div class="footer-newsletter">
+                        <h4>Subscribe to Our Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Accommodation</a></li>
+                        <li><a href="wildlife.html">Wildlife Experiences</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Safari Packages</a></li>
+                        <li><a href="index.html#booking">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Experiences</h4>
+                    <ul>
+                        <li><a href="wildlife.html#gorilla-trekking">Gorilla Trekking</a></li>
+                        <li><a href="wildlife.html#golden-monkey">Golden Monkey Tracking</a></li>
+                        <li><a href="destinations.html#virunga">Virunga Volcano Hiking</a></li>
+                        <li><a href="destinations.html#lake-mutanda">Lake Mutanda Tours</a></li>
+                        <li><a href="wildlife.html#birding">Bird Watching</a></li>
+                        <li><a href="about.html#cultural">Batwa Cultural Trail</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kisoro, South Western Uganda</li>
+                        <li><i class="fas fa-phone"></i> +256 700 123 456</li>
+                        <li><i class="fas fa-envelope"></i> info@silverbackhaven.com</li>
+                    </ul>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Silverback Haven. All rights reserved.</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script>
+        // Gallery Filter
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-masonry > div');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filter = this.dataset.filter;
+
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.dataset.category === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => item.style.opacity = '1', 10);
+                        } else {
+                            item.style.opacity = '0';
+                            setTimeout(() => item.style.display = 'none', 300);
+                        }
+                    });
+                });
+            });
+
+            // Lightbox
+            const lightbox = document.getElementById('galleryLightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            let currentIndex = 0;
+            let galleryImages = [];
+
+            galleryItems.forEach((item, index) => {
+                const img = item.querySelector('img');
+                const title = item.querySelector('.gallery-item-title');
+
+                galleryImages.push({
+                    src: img.src,
+                    title: title ? title.textContent : ''
+                });
+
+                item.addEventListener('click', function() {
+                    currentIndex = index;
+                    openLightbox();
+                });
+            });
+
+            function openLightbox() {
+                lightboxImage.src = galleryImages[currentIndex].src;
+                lightboxCaption.textContent = galleryImages[currentIndex].title;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'visible';
+            }
+
+            document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+
+            document.querySelector('.lightbox-prev').addEventListener('click', function() {
+                currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+                lightboxImage.src = galleryImages[currentIndex].src;
+                lightboxCaption.textContent = galleryImages[currentIndex].title;
+            });
+
+            document.querySelector('.lightbox-next').addEventListener('click', function() {
+                currentIndex = (currentIndex + 1) % galleryImages.length;
+                lightboxImage.src = galleryImages[currentIndex].src;
+                lightboxCaption.textContent = galleryImages[currentIndex].title;
+            });
+
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (!lightbox.classList.contains('active')) return;
+
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') document.querySelector('.lightbox-prev').click();
+                if (e.key === 'ArrowRight') document.querySelector('.lightbox-next').click();
+            });
+        });
+    </script>
+</body>
+</html>

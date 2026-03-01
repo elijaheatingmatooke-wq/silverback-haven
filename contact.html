@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Silverback Haven - Luxury Wildlife Lodge Uganda</title>
+    <meta name="description" content="Get in touch with Silverback Haven. Plan your gorilla trekking adventure in Uganda. Contact our reservations team for bookings and inquiries.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="gorilla-icon">
+                <svg viewBox="0 0 100 100" width="80" height="80">
+                    <path fill="#c9a962" d="M50,10 C30,10 20,30 20,45 C20,55 25,65 30,70 L30,85 C30,90 35,95 40,95 L45,95 L45,75 L55,75 L55,95 L60,95 C65,95 70,90 70,85 L70,70 C75,65 80,55 80,45 C80,30 70,10 50,10 Z M35,45 C38,45 40,47 40,50 C40,53 38,55 35,55 C32,55 30,53 30,50 C30,47 32,45 35,45 Z M65,45 C68,45 70,47 70,50 C70,53 68,55 65,55 C62,55 60,53 60,50 C60,47 62,45 65,45 Z M50,70 C45,70 42,65 42,60 L58,60 C58,65 55,70 50,70 Z"/>
+                </svg>
+            </div>
+            <div class="loading-text">SILVERBACK HAVEN</div>
+            <div class="loading-bar"><span></span></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <a href="tel:+256700000000" class="top-bar-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+256 700 000 000</span>
+                </a>
+                <a href="mailto:info@silverbackhaven.com" class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@silverbackhaven.com</span>
+                </a>
+            </div>
+            <div class="top-bar-right">
+                <div class="top-bar-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <span class="logo-icon">
+                        <svg viewBox="0 0 50 50" width="40" height="40">
+                            <path fill="#c9a962" d="M25,5 C15,5 10,15 10,22.5 C10,27.5 12.5,32.5 15,35 L15,42.5 C15,45 17.5,47.5 20,47.5 L22.5,47.5 L22.5,37.5 L27.5,37.5 L27.5,47.5 L30,47.5 C32.5,47.5 35,45 35,42.5 L35,35 C37.5,32.5 40,27.5 40,22.5 C40,15 35,5 25,5 Z"/>
+                        </svg>
+                    </span>
+                    <span class="logo-text">Silverback Haven</span>
+                </a>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-quick-links">
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <a href="tel:+256700000000" class="nav-phone">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="index.html#booking" class="btn btn-book">Book Now</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                    <div class="menu-toggle-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="menu-toggle-text">Menu</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Full Screen Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-header">
+            <div class="menu-overlay-logo">
+                <span class="logo-text">Silverback Haven</span>
+            </div>
+            <button class="menu-close" id="menuClose" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="menu-overlay-content">
+            <div class="menu-main">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link" data-index="I">Home</a>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="rooms.html" class="menu-link" data-index="II">
+                            Rooms
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="rooms.html#forest-view">Forest View Rooms</a></li>
+                            <li><a href="rooms.html#gorilla-suite">Gorilla Suites</a></li>
+                            <li><a href="rooms.html#silverback-villa">Silverback Villas</a></li>
+                            <li><a href="rooms.html#spa">Spa & Wellness</a></li>
+                            <li><a href="packages.html">Packages</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="wildlife.html" class="menu-link" data-index="III">
+                            Wildlife
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="wildlife.html#gorilla-trekking">Gorilla Trekking</a></li>
+                            <li><a href="wildlife.html#golden-monkey">Golden Monkey Tracking</a></li>
+                            <li><a href="wildlife.html#chimpanzee">Chimpanzee Habituation</a></li>
+                            <li><a href="wildlife.html#volcano">Virunga Volcano Hiking</a></li>
+                            <li><a href="wildlife.html#birding">Bird Watching Safari</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="dining.html" class="menu-link" data-index="IV">
+                            Gastronomy
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="dining.html#mist-restaurant">The Mist Restaurant</a></li>
+                            <li><a href="dining.html#canopy-bar">Canopy Bar & Lounge</a></li>
+                            <li><a href="dining.html#bush-dining">Bush Dining Experience</a></li>
+                            <li><a href="dining.html#private-dining">Private Dining</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="destinations.html" class="menu-link" data-index="V">
+                            Destinations
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="destinations.html#bwindi">Bwindi Impenetrable Forest</a></li>
+                            <li><a href="destinations.html#mgahinga">Mgahinga Gorilla Park</a></li>
+                            <li><a href="destinations.html#lake-mutanda">Lake Mutanda</a></li>
+                            <li><a href="destinations.html#virunga">Virunga Mountains</a></li>
+                            <li><a href="destinations.html#bunyonyi">Lake Bunyonyi</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="about.html" class="menu-link" data-index="VI">
+                            About
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="about.html">About Silverback Haven</a></li>
+                            <li><a href="about.html#mission">Our Mission</a></li>
+                            <li><a href="about.html#cultural">Cultural Experiences</a></li>
+                            <li><a href="gallery.html">Photo Gallery</a></li>
+                            <li><a href="#testimonials">Guest Reviews</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="packages.html" class="menu-link" data-index="VII">Packages</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html" class="menu-link" data-index="VIII">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-sidebar">
+                <div class="menu-featured-image">
+                    <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mountain Gorilla">
+                    <div class="menu-featured-overlay">
+                        <span class="menu-featured-tag">Featured</span>
+                        <h3>Gorilla Trekking</h3>
+                        <p>Experience the magic of mountain gorillas in their natural habitat</p>
+                    </div>
+                </div>
+                <div class="menu-contact-info">
+                    <div class="menu-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kisoro, Uganda</span>
+                    </div>
+                    <div class="menu-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+256 700 000 000</span>
+                    </div>
+                    <div class="menu-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@silverbackhaven.com</span>
+                    </div>
+                </div>
+                <div class="menu-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="menu-overlay-footer">
+            <div class="menu-overlay-copyright">
+                © 2024 Silverback Haven. All rights reserved.
+            </div>
+            <div class="menu-overlay-cta">
+                <a href="index.html#booking" class="btn btn-primary">Book Your Stay</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background-image: url('https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <span class="page-header-tag">Get in Touch</span>
+            <h1 class="page-header-title animate-title">Contact Us</h1>
+            <p class="page-header-subtitle">We're here to help plan your Uganda adventure</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Contact</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-page">
+        <div class="container">
+            <div class="contact-page-grid">
+                <div class="contact-info-section">
+                    <span class="section-tag">Contact Information</span>
+                    <h2 class="section-title animate-title">Let's Start<br>Planning</h2>
+                    <p>Have questions about your upcoming stay or want to learn more about gorilla trekking and wildlife experiences in Uganda? Our dedicated team is here to help you plan the perfect adventure.</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-method-content">
+                                <h4>Call Us</h4>
+                                <a href="tel:+256700123456">+256 700 123 456</a>
+                                <p>Available 6am - 10pm EAT</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-method-content">
+                                <h4>WhatsApp</h4>
+                                <a href="https://wa.me/256700123456">+256 700 123 456</a>
+                                <p>Quick responses guaranteed</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-method-content">
+                                <h4>Email Us</h4>
+                                <a href="mailto:reservations@silverbackhaven.com">reservations@silverbackhaven.com</a>
+                                <p>We reply within 24 hours</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-method-content">
+                                <h4>Location</h4>
+                                <p>Kisoro District<br>South Western Uganda<br>Near Mgahinga Gorilla National Park</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-links-large">
+                            <a href="#" class="social-link-large"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link-large"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link-large"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link-large"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-link-large"><i class="fab fa-tripadvisor"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <div class="contact-form-wrapper">
+                        <h3>Send Us a Message</h3>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="booking">Booking Inquiry</option>
+                                    <option value="gorilla">Gorilla Trekking</option>
+                                    <option value="packages">Safari Packages</option>
+                                    <option value="custom">Custom Itinerary</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="feedback">Feedback</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message *</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Tell us about your travel plans, group size, preferred dates, and any special requirements..."></textarea>
+                            </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter">Subscribe to our newsletter for special offers and travel tips</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section map-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Find Us</span>
+                <h2 class="section-title animate-title">Our Location</h2>
+                <p>Silverback Haven is located in Kisoro District, the gateway to Uganda's gorilla country.</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127672.64874692!2d29.60!3d-1.28!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dc4d5e6b2a6b0f%3A0x7d0c3d5e6b2a6b0f!2sKisoro%2C%20Uganda!5e0!3m2!1sen!2sus!4v1629900000000!5m2!1sen!2sus" width="100%" height="500" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Here Section -->
+    <section class="section getting-here">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Travel</span>
+                <h2 class="section-title animate-title">Getting Here</h2>
+            </div>
+            <div class="travel-options-grid">
+                <div class="travel-option">
+                    <div class="travel-option-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h4>By Air</h4>
+                    <p><strong>From Entebbe (Uganda):</strong><br>
+                    Fly to Kihihi or Kisoro airstrip (1 hour), followed by a short 30-minute drive.</p>
+                    <p><strong>From Kigali (Rwanda):</strong><br>
+                    3-hour scenic drive through Rwanda to Kisoro.</p>
+                </div>
+                <div class="travel-option">
+                    <div class="travel-option-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h4>By Road</h4>
+                    <p><strong>From Entebbe/Kampala:</strong><br>
+                    8-9 hour drive through beautiful Ugandan countryside, or break the journey in Queen Elizabeth National Park.</p>
+                    <p><strong>From Kigali:</strong><br>
+                    3 hours via Cyanika border crossing.</p>
+                </div>
+                <div class="travel-option">
+                    <div class="travel-option-icon">
+                        <i class="fas fa-shuttle-van"></i>
+                    </div>
+                    <h4>Our Transfers</h4>
+                    <p>We offer private transfers from Entebbe, Kigali, or any location in Uganda. All transfers include:</p>
+                    <ul>
+                        <li>4x4 safari vehicle</li>
+                        <li>Professional driver-guide</li>
+                        <li>Bottled water & snacks</li>
+                        <li>Optional stops en route</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Help</span>
+                <h2 class="section-title animate-title">Frequently Asked<br>Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> How do I book gorilla permits?</h4>
+                    <p>We handle all permit bookings for our guests. Gorilla permits should be booked at least 3-6 months in advance, especially for peak season (June-September and December-February). Contact us to secure your permits.</p>
+                </div>
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> What's the best time to visit?</h4>
+                    <p>Gorilla trekking is possible year-round. Dry seasons (June-September and December-February) offer easier trekking conditions. Green season (March-May, October-November) has fewer tourists and lower prices.</p>
+                </div>
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> What should I pack?</h4>
+                    <p>We recommend waterproof hiking boots, long pants, long-sleeved shirts, rain jacket, gardening gloves, sunscreen, and insect repellent. We provide detailed packing lists upon booking.</p>
+                </div>
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> Is it safe to visit Uganda?</h4>
+                    <p>Yes! Uganda is one of Africa's safest destinations. The areas we visit have excellent security, and our guides are highly experienced. We monitor conditions constantly and prioritize guest safety.</p>
+                </div>
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> Do I need vaccinations?</h4>
+                    <p>Yellow fever vaccination is required for entry. We recommend consulting your doctor about malaria prophylaxis and other travel vaccines at least 6 weeks before travel.</p>
+                </div>
+                <div class="faq-item">
+                    <h4><i class="fas fa-question-circle"></i> What's included in the package prices?</h4>
+                    <p>All packages include accommodation, meals, permits, transfers, and guide services. International flights, travel insurance, tips, and personal expenses are not included. See individual packages for full details.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="cta-bg" style="background-image: url('https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Ready to Start Your Adventure?</h2>
+                <p>Contact us today and let's begin planning your unforgettable Uganda experience.</p>
+                <div class="cta-buttons">
+                    <a href="index.html#booking" class="btn btn-primary">Book Now</a>
+                    <a href="packages.html" class="btn btn-outline-light">View Packages</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
+                <path fill="#0a0a0a" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg viewBox="0 0 50 50" width="50" height="50">
+                            <path fill="#c9a962" d="M25,5 C15,5 10,15 10,22.5 C10,27.5 12.5,32.5 15,35 L15,42.5 C15,45 17.5,47.5 20,47.5 L22.5,47.5 L22.5,37.5 L27.5,37.5 L27.5,47.5 L30,47.5 C32.5,47.5 35,45 35,42.5 L35,35 C37.5,32.5 40,27.5 40,22.5 C40,15 35,5 25,5 Z"/>
+                        </svg>
+                        <span>Silverback Haven</span>
+                    </div>
+                    <p>Your gateway to the extraordinary world of mountain gorillas. Luxury lodge in Kisoro, Uganda - at the heart of the Virunga Mountains.</p>
+                    <div class="footer-newsletter">
+                        <h4>Subscribe to Our Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Accommodation</a></li>
+                        <li><a href="wildlife.html">Wildlife Experiences</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Safari Packages</a></li>
+                        <li><a href="index.html#booking">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Experiences</h4>
+                    <ul>
+                        <li><a href="wildlife.html#gorilla-trekking">Gorilla Trekking</a></li>
+                        <li><a href="wildlife.html#golden-monkey">Golden Monkey Tracking</a></li>
+                        <li><a href="destinations.html#virunga">Virunga Volcano Hiking</a></li>
+                        <li><a href="destinations.html#lake-mutanda">Lake Mutanda Tours</a></li>
+                        <li><a href="wildlife.html#birding">Bird Watching</a></li>
+                        <li><a href="about.html#cultural">Batwa Cultural Trail</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kisoro, South Western Uganda</li>
+                        <li><i class="fas fa-phone"></i> +256 700 123 456</li>
+                        <li><i class="fas fa-envelope"></i> info@silverbackhaven.com</li>
+                    </ul>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Silverback Haven. All rights reserved.</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script>
+        // Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Show notification
+            const notification = document.createElement('div');
+            notification.className = 'notification success show';
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Thank you for your message! Our team will get back to you within 24 hours.</span>
+                </div>
+                <button class="notification-close"><i class="fas fa-times"></i></button>
+            `;
+            document.body.appendChild(notification);
+
+            notification.querySelector('.notification-close').addEventListener('click', () => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            });
+
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            }, 5000);
+
+            this.reset();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safari Packages | Silverback Haven - Gorilla Trekking Uganda</title>
+    <meta name="description" content="Explore our all-inclusive safari packages at Silverback Haven. Gorilla trekking, golden monkey tracking, and luxury accommodation in Uganda.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="gorilla-icon">
+                <svg viewBox="0 0 100 100" width="80" height="80">
+                    <path fill="#c9a962" d="M50,10 C30,10 20,30 20,45 C20,55 25,65 30,70 L30,85 C30,90 35,95 40,95 L45,95 L45,75 L55,75 L55,95 L60,95 C65,95 70,90 70,85 L70,70 C75,65 80,55 80,45 C80,30 70,10 50,10 Z M35,45 C38,45 40,47 40,50 C40,53 38,55 35,55 C32,55 30,53 30,50 C30,47 32,45 35,45 Z M65,45 C68,45 70,47 70,50 C70,53 68,55 65,55 C62,55 60,53 60,50 C60,47 62,45 65,45 Z M50,70 C45,70 42,65 42,60 L58,60 C58,65 55,70 50,70 Z"/>
+                </svg>
+            </div>
+            <div class="loading-text">SILVERBACK HAVEN</div>
+            <div class="loading-bar"><span></span></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <a href="tel:+256700000000" class="top-bar-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+256 700 000 000</span>
+                </a>
+                <a href="mailto:info@silverbackhaven.com" class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@silverbackhaven.com</span>
+                </a>
+            </div>
+            <div class="top-bar-right">
+                <div class="top-bar-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <span class="logo-icon">
+                        <svg viewBox="0 0 50 50" width="40" height="40">
+                            <path fill="#c9a962" d="M25,5 C15,5 10,15 10,22.5 C10,27.5 12.5,32.5 15,35 L15,42.5 C15,45 17.5,47.5 20,47.5 L22.5,47.5 L22.5,37.5 L27.5,37.5 L27.5,47.5 L30,47.5 C32.5,47.5 35,45 35,42.5 L35,35 C37.5,32.5 40,27.5 40,22.5 C40,15 35,5 25,5 Z"/>
+                        </svg>
+                    </span>
+                    <span class="logo-text">Silverback Haven</span>
+                </a>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-quick-links">
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="packages.html" class="active">Packages</a></li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <a href="tel:+256700000000" class="nav-phone">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="index.html#booking" class="btn btn-book">Book Now</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                    <div class="menu-toggle-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="menu-toggle-text">Menu</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Full Screen Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-header">
+            <div class="menu-overlay-logo">
+                <span class="logo-text">Silverback Haven</span>
+            </div>
+            <button class="menu-close" id="menuClose" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="menu-overlay-content">
+            <div class="menu-main">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link" data-index="I">Home</a>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="rooms.html" class="menu-link" data-index="II">
+                            Rooms
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="rooms.html#forest-view">Forest View Rooms</a></li>
+                            <li><a href="rooms.html#gorilla-suite">Gorilla Suites</a></li>
+                            <li><a href="rooms.html#silverback-villa">Silverback Villas</a></li>
+                            <li><a href="rooms.html#spa">Spa & Wellness</a></li>
+                            <li><a href="packages.html">Packages</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="wildlife.html" class="menu-link" data-index="III">
+                            Wildlife
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="wildlife.html#gorilla-trekking">Gorilla Trekking</a></li>
+                            <li><a href="wildlife.html#golden-monkey">Golden Monkey Tracking</a></li>
+                            <li><a href="wildlife.html#chimpanzee">Chimpanzee Habituation</a></li>
+                            <li><a href="wildlife.html#volcano">Virunga Volcano Hiking</a></li>
+                            <li><a href="wildlife.html#birding">Bird Watching Safari</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="dining.html" class="menu-link" data-index="IV">
+                            Gastronomy
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="dining.html#mist-restaurant">The Mist Restaurant</a></li>
+                            <li><a href="dining.html#canopy-bar">Canopy Bar & Lounge</a></li>
+                            <li><a href="dining.html#bush-dining">Bush Dining Experience</a></li>
+                            <li><a href="dining.html#private-dining">Private Dining</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="destinations.html" class="menu-link" data-index="V">
+                            Destinations
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="destinations.html#bwindi">Bwindi Impenetrable Forest</a></li>
+                            <li><a href="destinations.html#mgahinga">Mgahinga Gorilla Park</a></li>
+                            <li><a href="destinations.html#lake-mutanda">Lake Mutanda</a></li>
+                            <li><a href="destinations.html#virunga">Virunga Mountains</a></li>
+                            <li><a href="destinations.html#bunyonyi">Lake Bunyonyi</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="about.html" class="menu-link" data-index="VI">
+                            About
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="about.html">About Silverback Haven</a></li>
+                            <li><a href="about.html#mission">Our Mission</a></li>
+                            <li><a href="about.html#cultural">Cultural Experiences</a></li>
+                            <li><a href="gallery.html">Photo Gallery</a></li>
+                            <li><a href="#testimonials">Guest Reviews</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="packages.html" class="menu-link" data-index="VII">Packages</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html" class="menu-link" data-index="VIII">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-sidebar">
+                <div class="menu-featured-image">
+                    <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Mountain Gorilla">
+                    <div class="menu-featured-overlay">
+                        <span class="menu-featured-tag">Featured</span>
+                        <h3>Gorilla Trekking</h3>
+                        <p>Experience the magic of mountain gorillas in their natural habitat</p>
+                    </div>
+                </div>
+                <div class="menu-contact-info">
+                    <div class="menu-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kisoro, Uganda</span>
+                    </div>
+                    <div class="menu-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+256 700 000 000</span>
+                    </div>
+                    <div class="menu-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@silverbackhaven.com</span>
+                    </div>
+                </div>
+                <div class="menu-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="menu-overlay-footer">
+            <div class="menu-overlay-copyright">
+                © 2024 Silverback Haven. All rights reserved.
+            </div>
+            <div class="menu-overlay-cta">
+                <a href="index.html#booking" class="btn btn-primary">Book Your Stay</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background-image: url('https://images.unsplash.com/photo-1535941339077-2dd1c7963098?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <span class="page-header-tag">All-Inclusive</span>
+            <h1 class="page-header-title animate-title">Safari Packages</h1>
+            <p class="page-header-subtitle">Curated experiences for every explorer</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Packages</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section packages-intro">
+        <div class="container">
+            <div class="intro-content text-center">
+                <span class="section-tag">Curated Experiences</span>
+                <h2 class="section-title animate-title">All-Inclusive<br>Safari Packages</h2>
+                <p class="intro-text">Our carefully designed packages take the guesswork out of planning your Uganda adventure. Each package includes accommodation, meals, permits, transfers, and expert guides - everything you need for an unforgettable wildlife experience. All you need to do is arrive and let us take care of the rest.</p>
+                <div class="packages-benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>Permits Included</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>All Meals</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-shuttle-van"></i>
+                        <span>Transfers</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Expert Guides</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package 1: Gorilla Encounter -->
+    <section id="gorilla-encounter" class="section package-detail">
+        <div class="container">
+            <div class="package-detail-grid">
+                <div class="package-detail-images">
+                    <div class="package-main-image">
+                        <img src="https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Gorilla Encounter Package">
+                    </div>
+                </div>
+                <div class="package-detail-content">
+                    <div class="package-duration-badge">3 Days / 2 Nights</div>
+                    <h2>Gorilla Encounter</h2>
+                    <p class="package-description">Our most popular package for first-time visitors to Uganda. Experience the magic of gorilla trekking in Bwindi Impenetrable Forest combined with luxury accommodation and cultural immersion.</p>
+
+                    <div class="package-itinerary">
+                        <h4>Day-by-Day Itinerary</h4>
+                        <div class="itinerary-day">
+                            <span class="day-number">Day 1</span>
+                            <div class="day-content">
+                                <strong>Arrival & Welcome</strong>
+                                <p>Airport pickup from Kigali or Entebbe, scenic drive to Silverback Haven, welcome dinner with briefing for tomorrow's trek.</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <span class="day-number">Day 2</span>
+                            <div class="day-content">
+                                <strong>Gorilla Trekking</strong>
+                                <p>Early morning departure for Bwindi, gorilla trekking experience (4-8 hours), return to lodge, relaxation, celebratory dinner.</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <span class="day-number">Day 3</span>
+                            <div class="day-content">
+                                <strong>Batwa Experience & Departure</strong>
+                                <p>Morning Batwa cultural trail, late breakfast, transfer to airport.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="package-includes-grid">
+                        <div class="includes-column">
+                            <h5><i class="fas fa-check-circle"></i> Included</h5>
+                            <ul>
+                                <li>2 nights luxury accommodation</li>
+                                <li>1 gorilla trekking permit</li>
+                                <li>All meals & beverages</li>
+                                <li>Airport transfers</li>
+                                <li>Batwa cultural visit</li>
+                                <li>Park entrance fees</li>
+                                <li>Expert guide throughout</li>
+                            </ul>
+                        </div>
+                        <div class="includes-column">
+                            <h5><i class="fas fa-times-circle"></i> Not Included</h5>
+                            <ul>
+                                <li>International flights</li>
+                                <li>Travel insurance</li>
+                                <li>Tips & gratuities</li>
+                                <li>Personal expenses</li>
+                                <li>Visa fees</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="package-price-box">
+                        <div class="price-info">
+                            <span class="price-label">From</span>
+                            <span class="price-amount">$1,850</span>
+                            <span class="price-per">per person sharing</span>
+                        </div>
+                        <div class="price-note">Single supplement: +$250</div>
+                    </div>
+
+                    <a href="index.html#booking" class="btn btn-primary btn-block">Book This Package</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package 2: Ultimate Primate Safari -->
+    <section id="primate-safari" class="section package-detail alt-bg">
+        <div class="container">
+            <div class="package-detail-grid reverse">
+                <div class="package-detail-images">
+                    <div class="package-main-image">
+                        <img src="https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Ultimate Primate Safari">
+                        <div class="package-badge">Best Value</div>
+                    </div>
+                </div>
+                <div class="package-detail-content">
+                    <div class="package-duration-badge featured">5 Days / 4 Nights</div>
+                    <h2>Ultimate Primate Safari</h2>
+                    <p class="package-description">Our signature package for those who want the complete primate experience. Two gorilla treks, golden monkey tracking, and unforgettable moments on Lake Mutanda - all in one incredible journey.</p>
+
+                    <div class="package-itinerary">
+                        <h4>Day-by-Day Itinerary</h4>
+                        <div class="itinerary-day">
+                            <span class="day-number">Day 1</span>
+                            <div class="day-content">
+                                <strong>Arrival & Lake Mutanda</strong>
+                                <p>Airport pickup, scenic drive to lodge, afternoon kayaking on Lake Mutanda, welcome dinner.</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <span class="day-number">Day 2</span>
+                            <div class="day-content">
+                                <strong>First Gorilla Trek</strong>
+                                <p>Gorilla trekking in Bwindi, afternoon spa treatment, bush dinner experience.</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <span class="day-number">Day 3</span>
+                            <div class="day-content">
+                                <strong>Golden Monkey Tracking</strong>
+                                <p>Morning golden monkey trek in Mgahinga, afternoon relaxation, Batwa cultural experience.</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <span class="day-number">Day 4</span>
+                            <div class="day-content">
+                                <strong>Second Gorilla Trek</strong>
+                                <p>Second gorilla family visit, farewell celebration dinner.</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <span class="day-number">Day 5</span>
+                            <div class="day-content">
+                                <strong>Departure</strong>
+                                <p>Leisurely breakfast, optional bird watching walk, transfer to airport.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="package-includes-grid">
+                        <div class="includes-column">
+                            <h5><i class="fas fa-check-circle"></i> Included</h5>
+                            <ul>
+                                <li>4 nights in Gorilla Suite</li>
+                                <li>2 gorilla trekking permits</li>
+                                <li>1 golden monkey permit</li>
+                                <li>All meals & premium drinks</li>
+                                <li>Lake Mutanda excursion</li>
+                                <li>Bush dinner experience</li>
+                                <li>Spa treatment</li>
+                                <li>All transfers</li>
+                            </ul>
+                        </div>
+                        <div class="includes-column">
+                            <h5><i class="fas fa-times-circle"></i> Not Included</h5>
+                            <ul>
+                                <li>International flights</li>
+                                <li>Travel insurance</li>
+                                <li>Tips & gratuities</li>
+                                <li>Personal expenses</li>
+                                <li>Visa fees</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="package-price-box featured">
+                        <div class="price-info">
+                            <span class="price-label">From</span>
+                            <span class="price-amount">$3,450</span>
+                            <span class="price-per">per person sharing</span>
+                        </div>
+                        <div class="price-note">Single supplement: +$450</div>
+                    </div>
+
+                    <a href="index.html#booking" class="btn btn-primary btn-block">Book This Package</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package 3: Grand Uganda Explorer -->
+    <section id="grand-explorer" class="section package-detail">
+        <div class="container">
+            <div class="package-detail-grid">
+                <div class="package-detail-images">
+                    <div class="package-main-image">
+                        <img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Grand Uganda Explorer">
+                    </div>
+                </div>
+                <div class="package-detail-content">
+                    <div class="package-duration-badge premium">7 Days / 6 Nights</div>
+                    <h2>Grand Uganda Explorer</h2>
+                    <p class="package-description">The ultimate Uganda adventure for those who want to experience everything this incredible country has to offer. From gorillas to volcanoes, crater lakes to cultural encounters - this is the journey of a lifetime.</p>
+
+                    <div class="package-itinerary">
+                        <h4>Day-by-Day Itinerary</h4>
+                        <div class="itinerary-day">
+                            <span class="day-number">Day 1</span>
+                            <div class="day-content">
+                                <strong>Arrival & Welcome</strong>
+                                <p>VIP airport pickup, luxury transfer, welcome ceremony, sunset drinks on private terrace.</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <span class="day-number">Day 2</span>
+                            <div class="day-content">
+                                <strong>First Gorilla Trek</strong>
+                                <p>Gorilla trekking in Bwindi, afternoon spa, private candlelit dinner.</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <span class="day-number">Day 3</span>
+                            <div class="day-content">
+                                <strong>Virunga Volcano Hike</strong>
+                                <p>Summit Mount Sabyinyo (3,669m), three-country viewpoint, celebration at lodge.</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <span class="day-number">Day 4</span>
+                            <div class="day-content">
+                                <strong>Lake Mutanda & Culture</strong>
+                                <p>Full day on Lake Mutanda - kayaking, island visit, lakeside lunch, Batwa trail experience.</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <span class="day-number">Day 5</span>
+                            <div class="day-content">
+                                <strong>Second Gorilla Trek</strong>
+                                <p>Second gorilla family encounter, afternoon birding walk, bush dinner.</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <span class="day-number">Day 6</span>
+                            <div class="day-content">
+                                <strong>Lake Bunyonyi Excursion</strong>
+                                <p>Day trip to Lake Bunyonyi, dugout canoe experience, community visit, farewell dinner.</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-day">
+                            <span class="day-number">Day 7</span>
+                            <div class="day-content">
+                                <strong>Departure</strong>
+                                <p>Leisurely morning, final spa treatment, private transfer to airport.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="package-includes-grid">
+                        <div class="includes-column">
+                            <h5><i class="fas fa-check-circle"></i> Included</h5>
+                            <ul>
+                                <li>6 nights in Silverback Villa</li>
+                                <li>2 gorilla trekking permits</li>
+                                <li>Virunga volcano hike</li>
+                                <li>Lake Mutanda full day</li>
+                                <li>Lake Bunyonyi excursion</li>
+                                <li>Private guide throughout</li>
+                                <li>All spa treatments</li>
+                                <li>Bush dinner & private dining</li>
+                                <li>Premium beverages</li>
+                                <li>Private butler service</li>
+                            </ul>
+                        </div>
+                        <div class="includes-column">
+                            <h5><i class="fas fa-times-circle"></i> Not Included</h5>
+                            <ul>
+                                <li>International flights</li>
+                                <li>Travel insurance</li>
+                                <li>Tips & gratuities</li>
+                                <li>Personal expenses</li>
+                                <li>Visa fees</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="package-price-box premium">
+                        <div class="price-info">
+                            <span class="price-label">From</span>
+                            <span class="price-amount">$5,200</span>
+                            <span class="price-per">per person sharing</span>
+                        </div>
+                        <div class="price-note">Single supplement: +$750</div>
+                    </div>
+
+                    <a href="index.html#booking" class="btn btn-primary btn-block">Book This Package</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Packages -->
+    <section class="section custom-packages">
+        <div class="custom-packages-bg" style="background-image: url('https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="custom-packages-overlay"></div>
+        <div class="container">
+            <div class="custom-packages-content text-center">
+                <span class="section-tag light">Tailor-Made</span>
+                <h2 class="section-title animate-title light">Custom Packages</h2>
+                <p>Can't find exactly what you're looking for? Our travel specialists can create a bespoke itinerary tailored to your interests, schedule, and budget. Whether you want to combine Uganda with Rwanda, add a savanna safari, or plan a special honeymoon adventure - we'll design the perfect trip for you.</p>
+                <div class="custom-packages-features">
+                    <div class="custom-feature">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Flexible Dates</span>
+                    </div>
+                    <div class="custom-feature">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Multi-Country Options</span>
+                    </div>
+                    <div class="custom-feature">
+                        <i class="fas fa-heart"></i>
+                        <span>Honeymoon Specials</span>
+                    </div>
+                    <div class="custom-feature">
+                        <i class="fas fa-users"></i>
+                        <span>Group Discounts</span>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Request Custom Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Comparison -->
+    <section class="section package-comparison">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Compare</span>
+                <h2 class="section-title animate-title">Choose Your<br>Perfect Package</h2>
+            </div>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Gorilla Encounter</th>
+                            <th class="featured">Ultimate Primate</th>
+                            <th>Grand Explorer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Duration</td>
+                            <td>3 Days / 2 Nights</td>
+                            <td class="featured">5 Days / 4 Nights</td>
+                            <td>7 Days / 6 Nights</td>
+                        </tr>
+                        <tr>
+                            <td>Accommodation</td>
+                            <td>Forest View Room</td>
+                            <td class="featured">Gorilla Suite</td>
+                            <td>Silverback Villa</td>
+                        </tr>
+                        <tr>
+                            <td>Gorilla Treks</td>
+                            <td>1</td>
+                            <td class="featured">2</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Golden Monkey</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td class="featured"><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Volcano Hike</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td class="featured"><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Lake Mutanda</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td class="featured"><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Lake Bunyonyi</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td class="featured"><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Spa Included</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td class="featured">1 Treatment</td>
+                            <td>Full Access</td>
+                        </tr>
+                        <tr>
+                            <td>Bush Dinner</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td class="featured"><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Private Butler</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td class="featured"><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Price From</td>
+                            <td><strong>$1,850</strong>/pp</td>
+                            <td class="featured"><strong>$3,450</strong>/pp</td>
+                            <td><strong>$5,200</strong>/pp</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><a href="index.html#booking" class="btn btn-outline btn-small">Book</a></td>
+                            <td class="featured"><a href="index.html#booking" class="btn btn-primary btn-small">Book</a></td>
+                            <td><a href="index.html#booking" class="btn btn-outline btn-small">Book</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="cta-bg" style="background-image: url('https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Ready to Begin Your Adventure?</h2>
+                <p>Book your package today and start counting down to the experience of a lifetime.</p>
+                <div class="cta-buttons">
+                    <a href="index.html#booking" class="btn btn-primary">Book Now</a>
+                    <a href="contact.html" class="btn btn-outline-light">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
+                <path fill="#0a0a0a" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg viewBox="0 0 50 50" width="50" height="50">
+                            <path fill="#c9a962" d="M25,5 C15,5 10,15 10,22.5 C10,27.5 12.5,32.5 15,35 L15,42.5 C15,45 17.5,47.5 20,47.5 L22.5,47.5 L22.5,37.5 L27.5,37.5 L27.5,47.5 L30,47.5 C32.5,47.5 35,45 35,42.5 L35,35 C37.5,32.5 40,27.5 40,22.5 C40,15 35,5 25,5 Z"/>
+                        </svg>
+                        <span>Silverback Haven</span>
+                    </div>
+                    <p>Your gateway to the extraordinary world of mountain gorillas. Luxury lodge in Kisoro, Uganda - at the heart of the Virunga Mountains.</p>
+                    <div class="footer-newsletter">
+                        <h4>Subscribe to Our Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Accommodation</a></li>
+                        <li><a href="wildlife.html">Wildlife Experiences</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Safari Packages</a></li>
+                        <li><a href="index.html#booking">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Experiences</h4>
+                    <ul>
+                        <li><a href="wildlife.html#gorilla-trekking">Gorilla Trekking</a></li>
+                        <li><a href="wildlife.html#golden-monkey">Golden Monkey Tracking</a></li>
+                        <li><a href="destinations.html#virunga">Virunga Volcano Hiking</a></li>
+                        <li><a href="destinations.html#lake-mutanda">Lake Mutanda Tours</a></li>
+                        <li><a href="wildlife.html#birding">Bird Watching</a></li>
+                        <li><a href="about.html#cultural">Batwa Cultural Trail</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kisoro, South Western Uganda</li>
+                        <li><i class="fas fa-phone"></i> +256 700 123 456</li>
+                        <li><i class="fas fa-envelope"></i> info@silverbackhaven.com</li>
+                    </ul>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Silverback Haven. All rights reserved.</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

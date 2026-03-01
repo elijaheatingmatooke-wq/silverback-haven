@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dining | Silverback Haven - Culinary Experiences Uganda</title>
+    <meta name="description" content="Experience exquisite dining at Silverback Haven. From The Mist Restaurant to bush dining under the stars, discover Uganda's finest culinary experiences.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="gorilla-icon">
+                <svg viewBox="0 0 100 100" width="80" height="80">
+                    <path fill="#c9a962" d="M50,10 C30,10 20,30 20,45 C20,55 25,65 30,70 L30,85 C30,90 35,95 40,95 L45,95 L45,75 L55,75 L55,95 L60,95 C65,95 70,90 70,85 L70,70 C75,65 80,55 80,45 C80,30 70,10 50,10 Z M35,45 C38,45 40,47 40,50 C40,53 38,55 35,55 C32,55 30,53 30,50 C30,47 32,45 35,45 Z M65,45 C68,45 70,47 70,50 C70,53 68,55 65,55 C62,55 60,53 60,50 C60,47 62,45 65,45 Z M50,70 C45,70 42,65 42,60 L58,60 C58,65 55,70 50,70 Z"/>
+                </svg>
+            </div>
+            <div class="loading-text">SILVERBACK HAVEN</div>
+            <div class="loading-bar"><span></span></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <a href="tel:+256700000000" class="top-bar-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+256 700 000 000</span>
+                </a>
+                <a href="mailto:info@silverbackhaven.com" class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@silverbackhaven.com</span>
+                </a>
+            </div>
+            <div class="top-bar-right">
+                <div class="top-bar-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <span class="logo-icon">
+                        <svg viewBox="0 0 50 50" width="40" height="40">
+                            <path fill="#c9a962" d="M25,5 C15,5 10,15 10,22.5 C10,27.5 12.5,32.5 15,35 L15,42.5 C15,45 17.5,47.5 20,47.5 L22.5,47.5 L22.5,37.5 L27.5,37.5 L27.5,47.5 L30,47.5 C32.5,47.5 35,45 35,42.5 L35,35 C37.5,32.5 40,27.5 40,22.5 C40,15 35,5 25,5 Z"/>
+                        </svg>
+                    </span>
+                    <span class="logo-text">Silverback Haven</span>
+                </a>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-quick-links">
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <a href="tel:+256700000000" class="nav-phone">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="index.html#booking" class="btn btn-book">Book Now</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                    <div class="menu-toggle-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="menu-toggle-text">Menu</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Full Screen Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-header">
+            <div class="menu-overlay-logo">
+                <span class="logo-text">Silverback Haven</span>
+            </div>
+            <button class="menu-close" id="menuClose" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="menu-overlay-content">
+            <div class="menu-main">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link" data-index="I">Home</a>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="rooms.html" class="menu-link" data-index="II">
+                            Rooms
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="rooms.html#forest-view">Forest View Rooms</a></li>
+                            <li><a href="rooms.html#gorilla-suite">Gorilla Suites</a></li>
+                            <li><a href="rooms.html#silverback-villa">Silverback Villas</a></li>
+                            <li><a href="rooms.html#spa">Spa & Wellness</a></li>
+                            <li><a href="packages.html">Packages</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="wildlife.html" class="menu-link" data-index="III">
+                            Wildlife
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="wildlife.html#gorilla-trekking">Gorilla Trekking</a></li>
+                            <li><a href="wildlife.html#golden-monkey">Golden Monkey Tracking</a></li>
+                            <li><a href="wildlife.html#chimpanzee">Chimpanzee Habituation</a></li>
+                            <li><a href="wildlife.html#volcano">Virunga Volcano Hiking</a></li>
+                            <li><a href="wildlife.html#birding">Bird Watching Safari</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="dining.html" class="menu-link" data-index="IV">
+                            Gastronomy
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="dining.html#mist-restaurant">The Mist Restaurant</a></li>
+                            <li><a href="dining.html#canopy-bar">Canopy Bar & Lounge</a></li>
+                            <li><a href="dining.html#bush-dining">Bush Dining Experience</a></li>
+                            <li><a href="dining.html#private-dining">Private Dining</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="destinations.html" class="menu-link" data-index="V">
+                            Destinations
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="destinations.html#bwindi">Bwindi Impenetrable Forest</a></li>
+                            <li><a href="destinations.html#mgahinga">Mgahinga Gorilla Park</a></li>
+                            <li><a href="destinations.html#lake-mutanda">Lake Mutanda</a></li>
+                            <li><a href="destinations.html#virunga">Virunga Mountains</a></li>
+                            <li><a href="destinations.html#bunyonyi">Lake Bunyonyi</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="about.html" class="menu-link" data-index="VI">
+                            About
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="about.html">About Silverback Haven</a></li>
+                            <li><a href="about.html#mission">Our Mission</a></li>
+                            <li><a href="about.html#cultural">Cultural Experiences</a></li>
+                            <li><a href="gallery.html">Photo Gallery</a></li>
+                            <li><a href="#testimonials">Guest Reviews</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="packages.html" class="menu-link" data-index="VII">Packages</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html" class="menu-link" data-index="VIII">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-sidebar">
+                <div class="menu-featured-image">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Fine Dining">
+                    <div class="menu-featured-overlay">
+                        <span class="menu-featured-tag">Featured</span>
+                        <h3>The Mist Restaurant</h3>
+                        <p>Contemporary African cuisine with mountain views</p>
+                    </div>
+                </div>
+                <div class="menu-contact-info">
+                    <div class="menu-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kisoro, Uganda</span>
+                    </div>
+                    <div class="menu-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+256 700 000 000</span>
+                    </div>
+                    <div class="menu-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@silverbackhaven.com</span>
+                    </div>
+                </div>
+                <div class="menu-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="menu-overlay-footer">
+            <div class="menu-overlay-copyright">
+                © 2024 Silverback Haven. All rights reserved.
+            </div>
+            <div class="menu-overlay-cta">
+                <a href="index.html#booking" class="btn btn-primary">Book Your Stay</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <span class="page-header-tag">Gastronomy</span>
+            <h1 class="page-header-title animate-title">Dining</h1>
+            <p class="page-header-subtitle">A culinary journey through Uganda</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Dining</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section dining-intro">
+        <div class="container">
+            <div class="intro-content text-center">
+                <span class="section-tag">Culinary Excellence</span>
+                <h2 class="section-title animate-title">Flavors of the<br>African Highlands</h2>
+                <p class="intro-text">At Silverback Haven, dining is an experience to be savored. Our talented chefs combine locally-sourced ingredients with culinary traditions from across Uganda and East Africa, creating dishes that celebrate the rich flavors of this extraordinary region. From elegant fine dining to intimate bush dinners under the stars, every meal tells a story.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Mist Restaurant -->
+    <section id="mist-restaurant" class="section dining-venue">
+        <div class="container">
+            <div class="dining-venue-grid">
+                <div class="dining-venue-images">
+                    <div class="dining-main-image">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="The Mist Restaurant">
+                    </div>
+                    <div class="dining-gallery-small">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Gourmet Dish">
+                        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Fresh Ingredients">
+                    </div>
+                </div>
+                <div class="dining-venue-content">
+                    <span class="dining-venue-tag featured">Signature Restaurant</span>
+                    <h2>The Mist Restaurant</h2>
+                    <p class="dining-venue-description">Our signature restaurant offers a fusion of traditional Ugandan flavors with contemporary African cuisine. Floor-to-ceiling windows provide stunning views of the misty Virunga Mountains as you dine, while our chefs prepare dishes using the freshest local ingredients from surrounding communities.</p>
+                    <p class="dining-venue-description">The menu changes seasonally to reflect the best produce available, with highlights including locally-sourced tilapia from Lake Mutanda, organic vegetables from highland farms, and traditional Ugandan staples reimagined for the modern palate.</p>
+
+                    <div class="dining-venue-details">
+                        <div class="venue-detail">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Hours</strong>
+                                <span>Breakfast: 6:30 - 10:00 AM<br>Lunch: 12:00 - 3:00 PM<br>Dinner: 7:00 - 10:00 PM</span>
+                            </div>
+                        </div>
+                        <div class="venue-detail">
+                            <i class="fas fa-utensils"></i>
+                            <div>
+                                <strong>Cuisine</strong>
+                                <span>Contemporary African</span>
+                            </div>
+                        </div>
+                        <div class="venue-detail">
+                            <i class="fas fa-shirt"></i>
+                            <div>
+                                <strong>Dress Code</strong>
+                                <span>Smart Casual</span>
+                            </div>
+                        </div>
+                        <div class="venue-detail">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Capacity</strong>
+                                <span>60 guests</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dining-highlights">
+                        <h4>Highlights</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Panoramic mountain views</li>
+                            <li><i class="fas fa-check"></i> Farm-to-table philosophy</li>
+                            <li><i class="fas fa-check"></i> Extensive wine cellar</li>
+                            <li><i class="fas fa-check"></i> Vegetarian & vegan options</li>
+                            <li><i class="fas fa-check"></i> Private dining room available</li>
+                        </ul>
+                    </div>
+
+                    <a href="index.html#booking" class="btn btn-primary">Make a Reservation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Canopy Bar -->
+    <section id="canopy-bar" class="section dining-venue alt-bg">
+        <div class="container">
+            <div class="dining-venue-grid reverse">
+                <div class="dining-venue-images">
+                    <div class="dining-main-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Canopy Bar & Lounge">
+                    </div>
+                    <div class="dining-gallery-small">
+                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Craft Cocktail">
+                        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Bar Interior">
+                    </div>
+                </div>
+                <div class="dining-venue-content">
+                    <span class="dining-venue-tag">Cocktails & Relaxation</span>
+                    <h2>Canopy Bar & Lounge</h2>
+                    <p class="dining-venue-description">Unwind after your gorilla trekking adventure at the Canopy Bar & Lounge. Our mixologists craft signature cocktails using local ingredients like Uganda waragi, passion fruit, and wild honey, while you watch the sunset paint the Virunga peaks in golden hues.</p>
+                    <p class="dining-venue-description">The relaxed atmosphere is perfect for sharing stories of the day's adventures with fellow travelers, or simply savoring a quiet moment with a glass of South African wine from our curated selection.</p>
+
+                    <div class="dining-venue-details">
+                        <div class="venue-detail">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Hours</strong>
+                                <span>4:00 PM - Late</span>
+                            </div>
+                        </div>
+                        <div class="venue-detail">
+                            <i class="fas fa-cocktail"></i>
+                            <div>
+                                <strong>Specialty</strong>
+                                <span>Craft Cocktails & Local Spirits</span>
+                            </div>
+                        </div>
+                        <div class="venue-detail">
+                            <i class="fas fa-music"></i>
+                            <div>
+                                <strong>Ambiance</strong>
+                                <span>Live acoustic music on weekends</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dining-highlights">
+                        <h4>Signature Drinks</h4>
+                        <ul>
+                            <li><i class="fas fa-glass-martini-alt"></i> Silverback Sunset (passion fruit & waragi)</li>
+                            <li><i class="fas fa-glass-martini-alt"></i> Mountain Mist Mojito (wild honey & mint)</li>
+                            <li><i class="fas fa-glass-martini-alt"></i> Virunga Volcano (smoked whiskey blend)</li>
+                            <li><i class="fas fa-glass-martini-alt"></i> Golden Monkey (banana & coffee liqueur)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bush Dining -->
+    <section id="bush-dining" class="section dining-experience">
+        <div class="dining-experience-bg" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="dining-experience-overlay"></div>
+        <div class="container">
+            <div class="dining-experience-content">
+                <span class="dining-venue-tag light">Exclusive Experience</span>
+                <h2>Bush Dining Experience</h2>
+                <p>Dine under the African stars in an exclusive lakeside setting near Lake Mutanda. Our bush dining experience is the ultimate romantic dinner, featuring a private chef preparing a multi-course menu just for you, surrounded by flickering lanterns and the sounds of the African night.</p>
+
+                <div class="dining-experience-features">
+                    <div class="experience-feature">
+                        <i class="fas fa-star"></i>
+                        <h4>Private Setting</h4>
+                        <p>Exclusive lakeside location with candlelit ambiance</p>
+                    </div>
+                    <div class="experience-feature">
+                        <i class="fas fa-hat-chef"></i>
+                        <h4>Personal Chef</h4>
+                        <p>Custom menu prepared before your eyes</p>
+                    </div>
+                    <div class="experience-feature">
+                        <i class="fas fa-wine-glass-alt"></i>
+                        <h4>Wine Pairing</h4>
+                        <p>Sommelier-selected wines with each course</p>
+                    </div>
+                    <div class="experience-feature">
+                        <i class="fas fa-music"></i>
+                        <h4>Entertainment</h4>
+                        <p>Traditional Ugandan storytelling & music</p>
+                    </div>
+                </div>
+
+                <div class="dining-experience-info">
+                    <div class="info-item">
+                        <strong>Duration:</strong> 3-4 hours
+                    </div>
+                    <div class="info-item">
+                        <strong>Guests:</strong> 2-8 people
+                    </div>
+                    <div class="info-item">
+                        <strong>Price:</strong> From $250 per person
+                    </div>
+                    <div class="info-item">
+                        <strong>Booking:</strong> 24 hours advance
+                    </div>
+                </div>
+
+                <a href="index.html#booking" class="btn btn-primary">Book Bush Dinner</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Private Dining -->
+    <section id="private-dining" class="section dining-venue">
+        <div class="container">
+            <div class="dining-venue-grid">
+                <div class="dining-venue-images">
+                    <div class="dining-main-image">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Private Dining Room">
+                    </div>
+                    <div class="dining-gallery-small">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Villa Dining">
+                        <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Special Occasion">
+                    </div>
+                </div>
+                <div class="dining-venue-content">
+                    <span class="dining-venue-tag">Intimate Celebrations</span>
+                    <h2>Private Dining</h2>
+                    <p class="dining-venue-description">Whether celebrating a special occasion or simply seeking an intimate dining experience, our private dining options offer exclusivity and personalized service. Choose from our elegant private dining room in The Mist Restaurant or in-villa dining in your Silverback Villa.</p>
+                    <p class="dining-venue-description">Work with our executive chef to create a custom menu tailored to your preferences, dietary requirements, and the occasion. We specialize in honeymoon dinners, anniversary celebrations, and family gatherings.</p>
+
+                    <div class="dining-venue-details">
+                        <div class="venue-detail">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Capacity</strong>
+                                <span>2-12 guests</span>
+                            </div>
+                        </div>
+                        <div class="venue-detail">
+                            <i class="fas fa-calendar"></i>
+                            <div>
+                                <strong>Advance Notice</strong>
+                                <span>48 hours recommended</span>
+                            </div>
+                        </div>
+                        <div class="venue-detail">
+                            <i class="fas fa-concierge-bell"></i>
+                            <div>
+                                <strong>Service</strong>
+                                <span>Dedicated butler & sommelier</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dining-highlights">
+                        <h4>Perfect For</h4>
+                        <ul>
+                            <li><i class="fas fa-heart"></i> Honeymoon dinners</li>
+                            <li><i class="fas fa-glass-cheers"></i> Anniversary celebrations</li>
+                            <li><i class="fas fa-birthday-cake"></i> Birthday parties</li>
+                            <li><i class="fas fa-briefcase"></i> Corporate dinners</li>
+                            <li><i class="fas fa-users"></i> Family gatherings</li>
+                        </ul>
+                    </div>
+
+                    <a href="index.html#booking" class="btn btn-primary">Inquire About Private Dining</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dietary Accommodations -->
+    <section class="section dietary-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Special Diets</span>
+                <h2 class="section-title animate-title">We Cater to<br>All Dietary Needs</h2>
+                <p>Our chefs are experienced in preparing meals for all dietary requirements. Please inform us of any allergies or preferences when booking.</p>
+            </div>
+            <div class="dietary-grid">
+                <div class="dietary-card">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Vegetarian</h4>
+                    <p>Creative plant-based dishes using fresh local produce</p>
+                </div>
+                <div class="dietary-card">
+                    <i class="fas fa-seedling"></i>
+                    <h4>Vegan</h4>
+                    <p>Full vegan menus available upon request</p>
+                </div>
+                <div class="dietary-card">
+                    <i class="fas fa-bread-slice"></i>
+                    <h4>Gluten-Free</h4>
+                    <p>Extensive gluten-free options at every meal</p>
+                </div>
+                <div class="dietary-card">
+                    <i class="fas fa-allergies"></i>
+                    <h4>Allergies</h4>
+                    <p>Careful handling of all food allergies</p>
+                </div>
+                <div class="dietary-card">
+                    <i class="fas fa-moon"></i>
+                    <h4>Halal</h4>
+                    <p>Halal options available with advance notice</p>
+                </div>
+                <div class="dietary-card">
+                    <i class="fas fa-star-of-david"></i>
+                    <h4>Kosher</h4>
+                    <p>Kosher meals can be arranged</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="cta-bg" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Ready to Savor the Experience?</h2>
+                <p>Book your stay and discover the culinary delights of Silverback Haven.</p>
+                <div class="cta-buttons">
+                    <a href="index.html#booking" class="btn btn-primary">Book Now</a>
+                    <a href="packages.html" class="btn btn-outline-light">View Packages</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
+                <path fill="#0a0a0a" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg viewBox="0 0 50 50" width="50" height="50">
+                            <path fill="#c9a962" d="M25,5 C15,5 10,15 10,22.5 C10,27.5 12.5,32.5 15,35 L15,42.5 C15,45 17.5,47.5 20,47.5 L22.5,47.5 L22.5,37.5 L27.5,37.5 L27.5,47.5 L30,47.5 C32.5,47.5 35,45 35,42.5 L35,35 C37.5,32.5 40,27.5 40,22.5 C40,15 35,5 25,5 Z"/>
+                        </svg>
+                        <span>Silverback Haven</span>
+                    </div>
+                    <p>Your gateway to the extraordinary world of mountain gorillas. Luxury lodge in Kisoro, Uganda - at the heart of the Virunga Mountains.</p>
+                    <div class="footer-newsletter">
+                        <h4>Subscribe to Our Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Accommodation</a></li>
+                        <li><a href="wildlife.html">Wildlife Experiences</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Safari Packages</a></li>
+                        <li><a href="index.html#booking">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Experiences</h4>
+                    <ul>
+                        <li><a href="wildlife.html#gorilla-trekking">Gorilla Trekking</a></li>
+                        <li><a href="wildlife.html#golden-monkey">Golden Monkey Tracking</a></li>
+                        <li><a href="destinations.html#virunga">Virunga Volcano Hiking</a></li>
+                        <li><a href="destinations.html#lake-mutanda">Lake Mutanda Tours</a></li>
+                        <li><a href="wildlife.html#birding">Bird Watching</a></li>
+                        <li><a href="about.html#cultural">Batwa Cultural Trail</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kisoro, South Western Uganda</li>
+                        <li><i class="fas fa-phone"></i> +256 700 123 456</li>
+                        <li><i class="fas fa-envelope"></i> info@silverbackhaven.com</li>
+                    </ul>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Silverback Haven. All rights reserved.</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

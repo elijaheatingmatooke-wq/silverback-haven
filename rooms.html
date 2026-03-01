@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms & Suites | Silverback Haven - Luxury Wildlife Lodge</title>
+    <meta name="description" content="Discover our luxurious rooms and suites at Silverback Haven. From Forest View Rooms to exclusive Silverback Villas, experience comfort amidst Uganda's wilderness.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="gorilla-icon">
+                <svg viewBox="0 0 100 100" width="80" height="80">
+                    <path fill="#c9a962" d="M50,10 C30,10 20,30 20,45 C20,55 25,65 30,70 L30,85 C30,90 35,95 40,95 L45,95 L45,75 L55,75 L55,95 L60,95 C65,95 70,90 70,85 L70,70 C75,65 80,55 80,45 C80,30 70,10 50,10 Z M35,45 C38,45 40,47 40,50 C40,53 38,55 35,55 C32,55 30,53 30,50 C30,47 32,45 35,45 Z M65,45 C68,45 70,47 70,50 C70,53 68,55 65,55 C62,55 60,53 60,50 C60,47 62,45 65,45 Z M50,70 C45,70 42,65 42,60 L58,60 C58,65 55,70 50,70 Z"/>
+                </svg>
+            </div>
+            <div class="loading-text">SILVERBACK HAVEN</div>
+            <div class="loading-bar"><span></span></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <a href="tel:+256700000000" class="top-bar-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+256 700 000 000</span>
+                </a>
+                <a href="mailto:info@silverbackhaven.com" class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@silverbackhaven.com</span>
+                </a>
+            </div>
+            <div class="top-bar-right">
+                <div class="top-bar-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <span class="logo-icon">
+                        <svg viewBox="0 0 50 50" width="40" height="40">
+                            <path fill="#c9a962" d="M25,5 C15,5 10,15 10,22.5 C10,27.5 12.5,32.5 15,35 L15,42.5 C15,45 17.5,47.5 20,47.5 L22.5,47.5 L22.5,37.5 L27.5,37.5 L27.5,47.5 L30,47.5 C32.5,47.5 35,45 35,42.5 L35,35 C37.5,32.5 40,27.5 40,22.5 C40,15 35,5 25,5 Z"/>
+                        </svg>
+                    </span>
+                    <span class="logo-text">Silverback Haven</span>
+                </a>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-quick-links">
+                    <li><a href="rooms.html" class="active">Rooms</a></li>
+                    <li><a href="wildlife.html">Wildlife</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <a href="tel:+256700000000" class="nav-phone">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="index.html#booking" class="btn btn-book">Book Now</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                    <div class="menu-toggle-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="menu-toggle-text">Menu</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Full Screen Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-header">
+            <div class="menu-overlay-logo">
+                <span class="logo-text">Silverback Haven</span>
+            </div>
+            <button class="menu-close" id="menuClose" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="menu-overlay-content">
+            <div class="menu-main">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link" data-index="I">Home</a>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="rooms.html" class="menu-link" data-index="II">
+                            Rooms
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="rooms.html#forest-view">Forest View Rooms</a></li>
+                            <li><a href="rooms.html#gorilla-suite">Gorilla Suites</a></li>
+                            <li><a href="rooms.html#silverback-villa">Silverback Villas</a></li>
+                            <li><a href="rooms.html#spa">Spa & Wellness</a></li>
+                            <li><a href="packages.html">Packages</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="wildlife.html" class="menu-link" data-index="III">
+                            Wildlife
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="wildlife.html#gorilla-trekking">Gorilla Trekking</a></li>
+                            <li><a href="wildlife.html#golden-monkey">Golden Monkey Tracking</a></li>
+                            <li><a href="wildlife.html#chimpanzee">Chimpanzee Habituation</a></li>
+                            <li><a href="wildlife.html#volcano">Virunga Volcano Hiking</a></li>
+                            <li><a href="wildlife.html#birding">Bird Watching Safari</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="dining.html" class="menu-link" data-index="IV">
+                            Gastronomy
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="dining.html#mist-restaurant">The Mist Restaurant</a></li>
+                            <li><a href="dining.html#canopy-bar">Canopy Bar & Lounge</a></li>
+                            <li><a href="dining.html#bush-dining">Bush Dining Experience</a></li>
+                            <li><a href="dining.html#private-dining">Private Dining</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="destinations.html" class="menu-link" data-index="V">
+                            Destinations
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="destinations.html#bwindi">Bwindi Impenetrable Forest</a></li>
+                            <li><a href="destinations.html#mgahinga">Mgahinga Gorilla Park</a></li>
+                            <li><a href="destinations.html#lake-mutanda">Lake Mutanda</a></li>
+                            <li><a href="destinations.html#virunga">Virunga Mountains</a></li>
+                            <li><a href="destinations.html#bunyonyi">Lake Bunyonyi</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="about.html" class="menu-link" data-index="VI">
+                            About
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="about.html">About Silverback Haven</a></li>
+                            <li><a href="about.html#mission">Our Mission</a></li>
+                            <li><a href="about.html#cultural">Cultural Experiences</a></li>
+                            <li><a href="gallery.html">Photo Gallery</a></li>
+                            <li><a href="#testimonials">Guest Reviews</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="packages.html" class="menu-link" data-index="VII">Packages</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html" class="menu-link" data-index="VIII">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-sidebar">
+                <div class="menu-featured-image">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Luxury Suite">
+                    <div class="menu-featured-overlay">
+                        <span class="menu-featured-tag">Featured</span>
+                        <h3>Gorilla Suite</h3>
+                        <p>Wake up to stunning views of the Virunga Mountains</p>
+                    </div>
+                </div>
+                <div class="menu-contact-info">
+                    <div class="menu-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kisoro, Uganda</span>
+                    </div>
+                    <div class="menu-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+256 700 000 000</span>
+                    </div>
+                    <div class="menu-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@silverbackhaven.com</span>
+                    </div>
+                </div>
+                <div class="menu-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="menu-overlay-footer">
+            <div class="menu-overlay-copyright">
+                © 2024 Silverback Haven. All rights reserved.
+            </div>
+            <div class="menu-overlay-cta">
+                <a href="index.html#booking" class="btn btn-primary">Book Your Stay</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <span class="page-header-tag">Accommodation</span>
+            <h1 class="page-header-title animate-title">Rooms & Suites</h1>
+            <p class="page-header-subtitle">Where comfort meets the wild beauty of Uganda</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Rooms</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section rooms-intro">
+        <div class="container">
+            <div class="intro-content text-center">
+                <span class="section-tag">Luxury Accommodation</span>
+                <h2 class="section-title animate-title">Sleep Amidst the<br>Virunga Mountains</h2>
+                <p class="intro-text">At Silverback Haven, we've crafted accommodations that honor the stunning natural environment while providing the ultimate in comfort and luxury. Each room offers breathtaking views of the misty Virunga Mountains or the ancient Bwindi Forest, creating an unforgettable backdrop for your Uganda adventure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forest View Rooms -->
+    <section id="forest-view" class="section room-detail">
+        <div class="container">
+            <div class="room-detail-grid">
+                <div class="room-detail-images">
+                    <div class="room-main-image">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Forest View Room">
+                    </div>
+                    <div class="room-gallery-small">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Room Interior">
+                        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Room Bathroom">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Room View">
+                    </div>
+                </div>
+                <div class="room-detail-content">
+                    <span class="room-category-tag">12 Rooms Available</span>
+                    <h2>Forest View Room</h2>
+                    <p class="room-detail-description">Our Forest View Rooms offer an intimate retreat with panoramic views of the ancient Bwindi rainforest. Wake up to the sounds of exotic birds and the gentle mist rolling through the trees. These rooms are perfect for couples and solo travelers seeking a deep connection with nature without sacrificing comfort.</p>
+
+                    <div class="room-specs">
+                        <div class="room-spec">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            <span>45 m² / 485 sq ft</span>
+                        </div>
+                        <div class="room-spec">
+                            <i class="fas fa-bed"></i>
+                            <span>King Size Bed</span>
+                        </div>
+                        <div class="room-spec">
+                            <i class="fas fa-users"></i>
+                            <span>Max 2 Guests</span>
+                        </div>
+                        <div class="room-spec">
+                            <i class="fas fa-mountain"></i>
+                            <span>Forest View</span>
+                        </div>
+                    </div>
+
+                    <div class="room-amenities-list">
+                        <h4>Room Amenities</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Private balcony with forest views</li>
+                            <li><i class="fas fa-check"></i> En-suite bathroom with rain shower</li>
+                            <li><i class="fas fa-check"></i> Complimentary WiFi</li>
+                            <li><i class="fas fa-check"></i> Mini bar with local beverages</li>
+                            <li><i class="fas fa-check"></i> Organic bath amenities</li>
+                            <li><i class="fas fa-check"></i> In-room safe</li>
+                            <li><i class="fas fa-check"></i> 24-hour room service</li>
+                            <li><i class="fas fa-check"></i> Mosquito nets & screens</li>
+                        </ul>
+                    </div>
+
+                    <div class="room-price-booking">
+                        <div class="room-price">
+                            <span class="price-from">From</span>
+                            <span class="price-amount">$250</span>
+                            <span class="price-per">per night</span>
+                        </div>
+                        <a href="index.html#booking" class="btn btn-primary">Book This Room</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gorilla Suite -->
+    <section id="gorilla-suite" class="section room-detail alt-bg">
+        <div class="container">
+            <div class="room-detail-grid reverse">
+                <div class="room-detail-images">
+                    <div class="room-main-image">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Gorilla Suite">
+                    </div>
+                    <div class="room-gallery-small">
+                        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Suite Living Area">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Suite Bathroom">
+                        <img src="https://images.unsplash.com/photo-1564078516393-cf04bd966897?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Suite Outdoor Bath">
+                    </div>
+                </div>
+                <div class="room-detail-content">
+                    <span class="room-category-tag featured">8 Suites • Most Popular</span>
+                    <h2>Gorilla Suite</h2>
+                    <p class="room-detail-description">Our signature Gorilla Suites are named after the magnificent silverbacks that roam the nearby mountains. These spacious retreats feature private balconies with unobstructed views of the Virunga volcanoes, outdoor bathtubs for stargazing, and elegant interiors that blend local craftsmanship with modern luxury.</p>
+
+                    <div class="room-specs">
+                        <div class="room-spec">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            <span>75 m² / 807 sq ft</span>
+                        </div>
+                        <div class="room-spec">
+                            <i class="fas fa-bed"></i>
+                            <span>King Size Bed</span>
+                        </div>
+                        <div class="room-spec">
+                            <i class="fas fa-users"></i>
+                            <span>Max 3 Guests</span>
+                        </div>
+                        <div class="room-spec">
+                            <i class="fas fa-mountain"></i>
+                            <span>Volcano View</span>
+                        </div>
+                    </div>
+
+                    <div class="room-amenities-list">
+                        <h4>Suite Amenities</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Spacious private balcony</li>
+                            <li><i class="fas fa-check"></i> Outdoor copper bathtub</li>
+                            <li><i class="fas fa-check"></i> Wood-burning fireplace</li>
+                            <li><i class="fas fa-check"></i> Separate living area</li>
+                            <li><i class="fas fa-check"></i> Premium minibar included</li>
+                            <li><i class="fas fa-check"></i> Nespresso coffee machine</li>
+                            <li><i class="fas fa-check"></i> Binoculars for wildlife viewing</li>
+                            <li><i class="fas fa-check"></i> Complimentary laundry service</li>
+                        </ul>
+                    </div>
+
+                    <div class="room-price-booking">
+                        <div class="room-price">
+                            <span class="price-from">From</span>
+                            <span class="price-amount">$450</span>
+                            <span class="price-per">per night</span>
+                        </div>
+                        <a href="index.html#booking" class="btn btn-primary">Book This Suite</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Silverback Villa -->
+    <section id="silverback-villa" class="section room-detail">
+        <div class="container">
+            <div class="room-detail-grid">
+                <div class="room-detail-images">
+                    <div class="room-main-image">
+                        <img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Silverback Villa">
+                    </div>
+                    <div class="room-gallery-small">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Villa Pool">
+                        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Villa Kitchen">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Villa Deck">
+                    </div>
+                </div>
+                <div class="room-detail-content">
+                    <span class="room-category-tag premium">4 Exclusive Villas</span>
+                    <h2>Silverback Villa</h2>
+                    <p class="room-detail-description">The ultimate expression of luxury in the Ugandan wilderness. Our Silverback Villas are standalone retreats overlooking the pristine Lake Mutanda, offering complete privacy and unparalleled service. Each villa includes a dedicated butler, private infinity pool, full kitchen, and direct access to exclusive nature trails.</p>
+
+                    <div class="room-specs">
+                        <div class="room-spec">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            <span>150 m² / 1615 sq ft</span>
+                        </div>
+                        <div class="room-spec">
+                            <i class="fas fa-bed"></i>
+                            <span>2 Bedrooms</span>
+                        </div>
+                        <div class="room-spec">
+                            <i class="fas fa-users"></i>
+                            <span>Max 6 Guests</span>
+                        </div>
+                        <div class="room-spec">
+                            <i class="fas fa-water"></i>
+                            <span>Lake View</span>
+                        </div>
+                    </div>
+
+                    <div class="room-amenities-list">
+                        <h4>Villa Amenities</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Private infinity pool</li>
+                            <li><i class="fas fa-check"></i> Dedicated personal butler</li>
+                            <li><i class="fas fa-check"></i> Full gourmet kitchen</li>
+                            <li><i class="fas fa-check"></i> Two master bedrooms with en-suite</li>
+                            <li><i class="fas fa-check"></i> Private dining terrace</li>
+                            <li><i class="fas fa-check"></i> In-villa spa treatments</li>
+                            <li><i class="fas fa-check"></i> Private nature trail access</li>
+                            <li><i class="fas fa-check"></i> Complimentary airport transfers</li>
+                        </ul>
+                    </div>
+
+                    <div class="room-price-booking">
+                        <div class="room-price">
+                            <span class="price-from">From</span>
+                            <span class="price-amount">$850</span>
+                            <span class="price-per">per night</span>
+                        </div>
+                        <a href="index.html#booking" class="btn btn-primary">Book This Villa</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spa & Wellness Section -->
+    <section id="spa" class="section spa-wellness">
+        <div class="spa-bg" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="spa-overlay"></div>
+        <div class="container">
+            <div class="spa-content">
+                <span class="section-tag light">Wellness</span>
+                <h2 class="section-title animate-title light">Rejuvenate Your<br>Body & Soul</h2>
+                <p>After a day of gorilla trekking, unwind at our spa sanctuary. Our treatments incorporate traditional African healing techniques and locally-sourced ingredients from the Virunga region.</p>
+                <div class="spa-features">
+                    <div class="spa-feature">
+                        <i class="fas fa-spa"></i>
+                        <h4>Traditional Massages</h4>
+                        <p>African-inspired therapies using organic shea butter and essential oils</p>
+                    </div>
+                    <div class="spa-feature">
+                        <i class="fas fa-hot-tub"></i>
+                        <h4>Volcanic Hot Stone</h4>
+                        <p>Heated volcanic stones from the Virunga Mountains</p>
+                    </div>
+                    <div class="spa-feature">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Forest Bathing</h4>
+                        <p>Guided mindfulness sessions in our private forest reserve</p>
+                    </div>
+                    <div class="spa-feature">
+                        <i class="fas fa-water"></i>
+                        <h4>Hydrotherapy</h4>
+                        <p>Heated outdoor pools with mountain views</p>
+                    </div>
+                </div>
+                <a href="index.html#booking" class="btn btn-primary">Book Spa Treatment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Room Comparison -->
+    <section class="section room-comparison">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-tag">Compare</span>
+                <h2 class="section-title animate-title">Find Your Perfect<br>Accommodation</h2>
+            </div>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Forest View Room</th>
+                            <th class="featured">Gorilla Suite</th>
+                            <th>Silverback Villa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Size</td>
+                            <td>45 m²</td>
+                            <td class="featured">75 m²</td>
+                            <td>150 m²</td>
+                        </tr>
+                        <tr>
+                            <td>Max Guests</td>
+                            <td>2</td>
+                            <td class="featured">3</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Private Balcony</td>
+                            <td><i class="fas fa-check"></i></td>
+                            <td class="featured"><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Outdoor Bathtub</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td class="featured"><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Fireplace</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td class="featured"><i class="fas fa-check"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Private Pool</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td class="featured"><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Butler Service</td>
+                            <td><i class="fas fa-times"></i></td>
+                            <td class="featured"><i class="fas fa-times"></i></td>
+                            <td><i class="fas fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>View</td>
+                            <td>Forest</td>
+                            <td class="featured">Volcano</td>
+                            <td>Lake</td>
+                        </tr>
+                        <tr>
+                            <td>Starting Price</td>
+                            <td><strong>$250</strong>/night</td>
+                            <td class="featured"><strong>$450</strong>/night</td>
+                            <td><strong>$850</strong>/night</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><a href="index.html#booking" class="btn btn-outline btn-small">Book</a></td>
+                            <td class="featured"><a href="index.html#booking" class="btn btn-primary btn-small">Book</a></td>
+                            <td><a href="index.html#booking" class="btn btn-outline btn-small">Book</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="cta-bg" style="background-image: url('https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Ready to Experience Silverback Haven?</h2>
+                <p>Book your stay and embark on an unforgettable journey into the heart of Uganda's wilderness.</p>
+                <div class="cta-buttons">
+                    <a href="index.html#booking" class="btn btn-primary">Check Availability</a>
+                    <a href="packages.html" class="btn btn-outline-light">View Packages</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100">
+                <path fill="#0a0a0a" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg viewBox="0 0 50 50" width="50" height="50">
+                            <path fill="#c9a962" d="M25,5 C15,5 10,15 10,22.5 C10,27.5 12.5,32.5 15,35 L15,42.5 C15,45 17.5,47.5 20,47.5 L22.5,47.5 L22.5,37.5 L27.5,37.5 L27.5,47.5 L30,47.5 C32.5,47.5 35,45 35,42.5 L35,35 C37.5,32.5 40,27.5 40,22.5 C40,15 35,5 25,5 Z"/>
+                        </svg>
+                        <span>Silverback Haven</span>
+                    </div>
+                    <p>Your gateway to the extraordinary world of mountain gorillas. Luxury lodge in Kisoro, Uganda - at the heart of the Virunga Mountains.</p>
+                    <div class="footer-newsletter">
+                        <h4>Subscribe to Our Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Accommodation</a></li>
+                        <li><a href="wildlife.html">Wildlife Experiences</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Safari Packages</a></li>
+                        <li><a href="index.html#booking">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Experiences</h4>
+                    <ul>
+                        <li><a href="wildlife.html#gorilla-trekking">Gorilla Trekking</a></li>
+                        <li><a href="wildlife.html#golden-monkey">Golden Monkey Tracking</a></li>
+                        <li><a href="destinations.html#virunga">Virunga Volcano Hiking</a></li>
+                        <li><a href="destinations.html#lake-mutanda">Lake Mutanda Tours</a></li>
+                        <li><a href="wildlife.html#birding">Bird Watching</a></li>
+                        <li><a href="about.html#cultural">Batwa Cultural Trail</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kisoro, South Western Uganda</li>
+                        <li><i class="fas fa-phone"></i> +256 700 123 456</li>
+                        <li><i class="fas fa-envelope"></i> info@silverbackhaven.com</li>
+                    </ul>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Silverback Haven. All rights reserved.</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
